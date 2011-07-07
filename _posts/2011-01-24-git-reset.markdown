@@ -1,0 +1,44 @@
+---
+author: feng
+date: '2011-01-24 17:45:44'
+layout: post
+slug: 'git reset'
+status: publish
+title: 误用git reset，3个小时的工作白做
+wordpress_id: '100'
+categories:
+- other
+tags:
+- git
+---
+
+误用git ，3个小时的工作白做，写下来，警戒自己，也帮助没有犯过这个错误的人，少犯（最好别犯）这个错误。
+今天，继续用clojure开发着onycloud的一个新功能。花了3个小时基本实现，测试也通过，git add ...., git
+commit，提交后才发现自己在master branch上，考虑刚才添加的是一个新
+feature，新建一个branch更好一点。git reset HEAD^ --soft -> git checkout -b
+{new-branch-name}-> git add .. -> git commit
+能实现这个。可是悲剧在这个时候发生了，在敲命令时，犯了一个错误：
+> git reset HEAD^ --soft 错误敲成了 git rest HEAD^ --hard。
+
+我习惯性的用g (alias of 'git status')，看看﻿﻿working tree
+status，期望刚改过源码的文件列在Changes to be committed，但情况是working tree
+status很干净！意识到错了，查看bash 历史，刚才命令敲错了。git help reset 对 --hard的解释是：
+> Matches the working tree and index to that of the tree being
+> switched to. Any changes to tracked files in the working tree since
+> commit are lost.
+
+看到Any changes to tracked files in  the working tree since commit are lost，几个小时的辛苦付诸东流了，伤悲啊！
+### 总结一下教训：
+
+1.  commit often.
+2.  对有破坏性的命令，至少两思而行。
+3.  不能怪git，错误在自己
+
+## 更新
+
+在同事的提醒下，又联想到git 对历史的管理是非常NB的，在google和stackoverflow的帮助下，挽救回来了。git
+reset 也会被记录在历史里面。先通过git reflog找出被reset的那次commit的hash 值${hash}，然后git
+reset --hard
+${hash}。惊了一场。更详细解释[undoing-a-git-reset-hard-head1](http://stackoverflow.com/questions/5473/undoing-a-git-reset-hard-head1)
+
+

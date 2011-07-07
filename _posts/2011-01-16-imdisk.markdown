@@ -1,0 +1,52 @@
+---
+author: feng
+date: '2011-01-16 00:16:06'
+layout: post
+slug: imdisk-%e8%99%9a%e6%8b%9f%e7%a3%81%e7%9b%98
+status: publish
+title: imdisk 虚拟磁盘
+wordpress_id: '73'
+categories:
+- technology
+tags:
+- software
+- windows
+---
+
+## [imdisk](http://www.ltr-data.se/opencode.html/#ImDisk)
+
+> ImDisk is a virtual disk driver for Windows
+> NT/2000/XP/2003/Vista/2008. It can create virtual hard disk, floppy
+> or CD/DVD drives using image files or **system memory**
+
+在windows 7 上时使用时，需要解决权限问题，方法之一是用admin 权限在cmd下运行 这两条命令
+（详情[http://www.ltr-data.se/opencode.html/\#ImDisk](http://www.ltr-data.se/opencode.html/#ImDisk)
+）：sc config imdisk start= auto net start imdisk。 1.
+imdisk可以当虚拟光驱用，挂载\*.iso文件,就像linux的mount -o loop 2. 用system memory
+创建的磁盘就像linux
+的tmpfs，访问速度很快![image](http://shenfeng.me/wp-content/uploads/2011/01/imdisk.png "imdisk")。
+这条命令
+> imdisk -a -s 5G -p "/fs:ntfs /q /y" -m \#:
+
+在我的机器上创建了一个5个G的虚拟硬盘，并且格式化，分配一个没有使用的盘符。（我用的是64为的windows 7，
+在32位系统上受限于32位虚拟内存地址，可能只能创建2G左右，**imdisk是按需
+使用内存的，**像linux的tmpfs）
+![image](http://shenfeng.me/wp-content/uploads/2011/01/disk.png "disk")
+### imdisk 用途
+
+-   做为ie，firefox，chrome等浏览器的缓存
+-   做为系统的临时目录
+-   挂在ISO文件
+-   ......
+
+google chrome 设置路径的方式是
+> --user-data-dir=e:
+
+firefox设置的方式是：
+> browser.cache.disk.parent\_directory=e:
+
+方便日常电脑使用，加快电脑速度。 顺便说一下，在linux下，做这些事情更方便：mount都能帮你搞定。
+> tmpfs /tmp tmpfs defaults 0 0 mount -o loop
+
+
+

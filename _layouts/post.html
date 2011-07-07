@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div>
+  <h2><a href="{{ page.url }}">
+    {{ page.title }}
+  </a></h2>
+  <div id="date"> {{ page.date | date_to_string }}</div>
+  {{ content }}
+</div>
+
