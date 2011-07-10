@@ -1,0 +1,58 @@
+@import "syntax";
+@import "css3";
+
+$page-width: 960px;
+$left-width: 715px;
+$side-bar-width: $page-width - $left-width - 15px;
+
+body { background-image: url("/imgs/background.png"); }
+#page-wraper { width: $page-width; margin: 0 auto; }
+#main { margin-bottom: 50px; }
+#content { width: $left-width; float: left; }
+#posts > ol { list-style: none; padding: 0; }
+.copyright { float: right; margin-right: 2em; }
+
+#side-bar {
+    float: right;
+    font-size: 95%;
+    width: $side-bar-width;
+    li { padding: 2px 0; }
+    a {
+        text-decoration: none;
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.highlight pre { font-family: Consolas, Inconsolata, monospace; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+#head {
+    padding: 1em 0;
+    h1 {
+        color: #647C8D;
+        text-shadow: 1px 1px 1px #AAA;
+        a { text-decoration: none; }
+    }
+    p.subtitle { float: right; margin: -2em 3em 0 0;}
+}
+
+#footer {
+    border-top: #CCC solid 1px;
+    ul {
+        padding: 0;
+        li {
+            &:first-child { margin-left: 0; }
+            margin: 0 8px;
+            display: inline;
+            a {
+                text-shadow: 1px 1px white;
+                color: #638FB2;
+                padding: 4px 0;
+                text-decoration: none;
+            }
+        }
+    }
+}
+

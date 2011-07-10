@@ -2,10 +2,8 @@
 author: feng
 date: '2010-12-17 21:41:59'
 layout: post
-slug: program-i-use
 status: publish
-title: program i use
-wordpress_id: '29'
+title: Programs I use
 categories:
 - linux
 tags:

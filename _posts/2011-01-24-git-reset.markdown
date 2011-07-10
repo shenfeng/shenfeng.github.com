@@ -2,10 +2,8 @@
 author: feng
 date: '2011-01-24 17:45:44'
 layout: post
-slug: 'git reset'
 status: publish
 title: 误用git reset，3个小时的工作白做
-wordpress_id: '100'
 categories:
 - other
 tags:

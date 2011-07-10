@@ -2,10 +2,8 @@
 author: feng
 date: '2011-02-19 22:09:12'
 layout: post
-slug: ssd-%e4%bc%98%e5%8c%96-linux-ubuntu-10-10-64bit
 status: publish
-title: linux ssd 优化 ----for ubuntu 10.10 64bit
-wordpress_id: '129'
+title: Linux SSD 优化 -- for ubuntu 10.10 64bit
 categories:
 - linux
 - technology

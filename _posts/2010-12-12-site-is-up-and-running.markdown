@@ -2,10 +2,8 @@
 author: feng
 date: '2010-12-12 14:01:29'
 layout: post
-slug: hello-world-2-2
 status: publish
-title: site is up and running
-wordpress_id: '168'
+title: Site is up and running
 categories:
 - other
 tags:

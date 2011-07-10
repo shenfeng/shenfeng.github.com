@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+# readlink in MacOSX behaves differently
+READLINK=readlink
+if which greadlink > /dev/null; then
+    READLINK=greadlink
+fi
+
+BLOG_HOST="shenfeng.me"
+ABSOLUTE_PATH=$(${READLINK} -f $0)
+BLOG_HOME="${ABSOLUTE_PATH%/*/*}"
+DEPLOYMENT_USER="deploy"
+SSH_TARGET="${DEPLOYMENT_USER}@${BLOG_HOST}"
+TARGET_DIR="/var/www/shenfeng.me"
+
+function remote_run {
+    ssh "${SSH_TARGET}" "$1"
+}
+
+# Create the directory if this is the first deployment.
+remote_run "sudo mkdir -p ${TARGET_DIR} && sudo chown deploy ${TARGET_DIR}"
+
+rsync --rsh='ssh' -vr --delete --delete-excluded \
+    "${BLOG_HOME}/_site/" "${SSH_TARGET}:${TARGET_DIR}/"

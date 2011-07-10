@@ -1,1 +1,5 @@
 auto: true
+permalink: /:title
+url: http://shenfeng.me
+pygments: tue
+exclude: [scss, bin, Rakefile]

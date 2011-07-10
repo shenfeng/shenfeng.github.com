@@ -2,10 +2,8 @@
 author: feng
 date: '2011-06-21 10:35:32'
 layout: post
-slug: None
 status: draft
 title: 北航考研
-wordpress_id: '181'
 ---
 
 姜军2011-06-21 13:13:31

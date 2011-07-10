@@ -2,10 +2,8 @@
 author: feng
 date: '2010-12-22 00:21:03'
 layout: post
-slug: guava
 status: publish
-title: guava,an open source java library from google
-wordpress_id: '35'
+title: Guava, an open source JAVA library from google
 categories:
 - java
 tags:
@@ -14,18 +12,33 @@ tags:
 ---
 
 大概半年以前就听说了guava, an open source java library from google.
-今天看了youtube上关于它的，google给出的，大约一个半小时的讲座。然后浏览了一下它的代码。 a very good,
-very usable library. 强调immutable。
-非常多的实用的util。包括对primitive的，对java.util，对io的，等等
-对Java  collection进行了有力的补充。 开拓了思路：annotation 可以来做doc。 @GuardedBy
-@Immutable @NotThreadSafe @Nonnull 等等。 近期在看《java concurrency in
-practice》， 也提倡这种方式。用他们来document比javadoc 好不少。understand by
-many，在阅读别人的代码，或者维护等时，会好很多。大学一老师非常喜欢标准。我受其影响。 以后写程序有更多的想象力。I will
-use it for my everyday Java programming. maven配置： [xml]
-<dependency> <groupId>com.google.code.findbugs</groupId>
-<artifactId>jsr305</artifactId> <version>1.3.9</version>
-</dependency> <dependency> <groupId>com.google.guava</groupId>
-<artifactId>guava</artifactId> <version>r07</version>
-</dependency> [/xml]
+今天看了youtube上找到关于它的两个视频，大约一个半小时。
+
+**Youtube - Using the Google Collections Library for Java (1 of 2)**
+
+<iframe width="560" height="349"
+        src="http://www.youtube.com/embed/ZeO_J2OcHYM"
+        frameborder="0" allowfullscreen="true">google collection 1</iframe>
+
+**Youtube - Using the Google Collections Library for Java (2 of 2)**
+
+<iframe width="560" height="349"
+        src="http://www.youtube.com/embed/9ni_KEkHfto"
+        frameborder="0" allowfullscreen="true">google collection 2</iframe>
+
+确实挺好的，推荐使用, maven配置
+
+{% highlight xml %}
+   <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>1.3.9</version>
+   </dependency>
+   <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>r07</version>
+    </dependency>
+{% endhighlight %}
 
 

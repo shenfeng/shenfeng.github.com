@@ -1,7 +1,7 @@
 ---
 author: feng
 date: '2010-12-12 14:01:29'
-layout: page
+layout: default
 slug: about
 status: publish
 title: About
@@ -18,22 +18,33 @@ I now live in Kunshan (Suzhou), Jiangsu, China. I was born in Dazhu,
 Sichuan, China. I do some coding for fun in my free time, most of them can be find here :
 [https://github.com/shenedu](https://github.com/shenedu)
 Here are my few programming's way of saying "Hello world!":
+
 **C Version:**
+{% highlight c %}
+    #include <stdio.h>
     int main(int argc, char *argv[]) {
         printf("%s","hello world!");
     }
+{% endhighlight %}
 **C++ Version:**
+{% highlight c++ %}
+    #include <iostream>
     int main(int argc, char *argv[]) {
         std::cout<<"hello world!";
     }
+{% endhighlight %}
 **JAVA Version:**
+{% highlight java %}
     public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello world!");
       }
     }
+{% endhighlight %}
 **Clojure Version:**
+{% highlight clojure %}
     (println "hello world!")
+{% endhighlight %}
 [shenfeng.me](http://shenfeng.me) is my personal blog. I use it to do note for life and programming.
 
 

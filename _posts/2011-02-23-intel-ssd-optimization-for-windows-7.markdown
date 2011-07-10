@@ -2,10 +2,8 @@
 author: feng
 date: '2011-02-23 22:28:11'
 layout: post
-slug: None
 status: draft
 title: Intel SSD optimization for windows 7
-wordpress_id: '167'
 ---
 
 [http://www.cucirca.com/2006/12/08/how-to-disable-windows-logging/](http://www.cucirca.com/2006/12/08/how-to-disable-windows-logging/)

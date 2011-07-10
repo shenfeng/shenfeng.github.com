@@ -1,0 +1,10 @@
+
+server {
+        server_name shenfeng.me;
+        access_log  /var/log/nginx/blog.access.log;
+        location / {
+                root /var/www/shenfeng.me;
+                index index.html;
+                expires 3d;
+        }
+}
