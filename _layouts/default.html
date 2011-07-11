@@ -7,8 +7,6 @@
     <title>Shenfeng's Blog &raquo; {{ page.title }}</title>
     <meta name="description" content="shenfeng's personal blog, about
                                       software, code, life, and others">
-    <!--[if lt IE 9]><script src="/js/modernizr.js?{VERSION}"></script> <![endif]-->
-
     <link href="/css/site.css" rel="stylesheet" type="text/css" />
     <link rel="alternate" type="application/atom+xml"
           title="shenfeng's Blog" href="{{site.url}}/atom.xml">
@@ -26,7 +24,7 @@
           <ul>
           {% for post in site.posts %}
             {% if post.status == "publish" %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+              <li><a href="{{ post.url }}/">{{ post.title }}</a></li>
             {% endif %}
           {% endfor %}
           </ul>
