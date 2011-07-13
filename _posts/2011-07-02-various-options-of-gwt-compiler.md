@@ -11,6 +11,9 @@ tags:
 - gwt
 ---
 
+[GWT](http://code.google.com/webtoolkit/) compiler is somewhat slow,
+here are some options I used to make it faster.
+
 **build.xml:**
 {% highlight xml %}
    <property name="gwt.args"  value="-compileReport-localWorkers 4
@@ -20,6 +23,7 @@ tags:
 **gwt.xml**
 {% highlight xml %}
    <set-property name="user.agent" value="safari,gecko_8"/>
+   <!--only compile for chrome, firefox-->
    <set-property name="compiler.stackMode" value="strip"/>
    <!--removes client-side stack trace info (can reduce size up to 15%)-->
    <set-configuration-property name="compiler.enum.obfuscate.names"
@@ -28,4 +32,6 @@ tags:
    <set-configuration-property name="CssResource.obfuscationPrefix"
                                value="empty" />
 {% endhighlight %}
+
+More information: [GWT Compile & Debug](http://code.google.com/webtoolkit/doc/latest/DevGuideCompilingAndDebugging.html)
 

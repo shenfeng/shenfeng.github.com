@@ -11,7 +11,7 @@
   </url>
   {% for post in site.posts limit:20 %}
   <url>
-    <loc>{{ site.url }}{{ post.url }}/</loc>
+    <loc>{{ site.url }}{{ post.url }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
