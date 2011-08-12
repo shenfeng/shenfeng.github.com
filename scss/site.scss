@@ -16,8 +16,13 @@ ul {
 #main { margin-bottom: 50px; }
 #content { width: $left-width; float: left; }
 #posts > ol { list-style: none; padding: 0; }
+#posts .post {
+    padding-bottom: 1em;
+    border-bottom: 1px #bbb solid;
+    margin-bottom: 1em;
+}
 .copyright { float: right; margin-right: 2em; font-size: 80%;}
-.date { font-size: small; }
+.date { font-size: small; text-align: right; margin-right: 2em; }
 #side-bar {
     float: right;
     font-size: 90%;

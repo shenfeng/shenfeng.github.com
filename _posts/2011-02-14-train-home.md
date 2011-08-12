@@ -2,12 +2,10 @@
 author: feng
 date: '2011-02-14 22:53:56'
 layout: post
-status: draft
+published: false
 title: 旅途中----记2011春节后返广州路上见闻
 categories:
 - life
-tags:
-- train
 ---
 
 2011年2月11日16:02分，由重庆北开往广州去的L211次（临快）列车启程了。

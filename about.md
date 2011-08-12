@@ -14,9 +14,15 @@ My name is 沈锋(shen feng), now working at
 2.  [Autodesk China Research and Development Center](http://usa.autodesk.com/), as an intern
 3.  [TRS](http://www.trs.com.cn/), as an intern
 
-I now live in Kunshan (Suzhou), Jiangsu, China. I was born in Dazhu,
-Sichuan, China. I do some coding for fun in my free time, most of them can be find here :
-[https://github.com/shenedu](https://github.com/shenedu)
+I now live in Kunshan (Suzhou), Jiangsu, China.
+
+I was born in Dazhu,Sichuan, China.
+
+I do some coding for fun in my free time, most of them can be find
+here:[shenfeng@github](https://github.com/shenfeng)
+
+My personal email is shenedu at gmail dot com.
+
 Here are my few programming's way of saying "Hello world!":
 
 **C Version:**
@@ -46,5 +52,3 @@ Here are my few programming's way of saying "Hello world!":
     (println "hello world!")
 {% endhighlight %}
 [shenfeng.me](http://shenfeng.me) is my personal blog. I use it to do note for life and programming.
-
-

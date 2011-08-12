@@ -2,7 +2,7 @@
 author: feng
 date: '2010-12-12 14:01:29'
 layout: post
-status: publish
+published: false
 title: Site is up and running
 desc: hello world
 categories:
