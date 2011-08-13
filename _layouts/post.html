@@ -2,10 +2,10 @@
 layout: default
 ---
 <div class="post">
+  <div class="date"> {{ page.date | date_to_string }}</div>
   <h2><a href="{{ page.url }}">
     {{ page.title }}
   </a></h2>
-  <div class="date"> {{ page.date | date_to_string }}</div>
   {{ content }}
 </div>
 

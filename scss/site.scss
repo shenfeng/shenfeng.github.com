@@ -17,12 +17,16 @@ ul {
 #content { width: $left-width; float: left; }
 #posts > ol { list-style: none; padding: 0; }
 #posts .post {
-    padding-bottom: 1em;
+    padding-bottom: 2em;
     border-bottom: 1px #bbb solid;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 .copyright { float: right; margin-right: 2em; font-size: 80%;}
-.date { font-size: small; text-align: right; margin-right: 2em; }
+.date {
+    font-size: small;
+    margin: 1em 2em 0 0;
+    float:right;
+}
 #side-bar {
     float: right;
     font-size: 90%;
