@@ -3,10 +3,12 @@ author: feng
 date: '2011-02-23 22:28:11'
 layout: post
 status: draft
+published: false
 title: Intel SSD optimization for windows 7
 ---
 
 [http://www.cucirca.com/2006/12/08/how-to-disable-windows-logging/](http://www.cucirca.com/2006/12/08/how-to-disable-windows-logging/)
+
 Start the registry editor by clicking “**Start**” -\> “**Run**…”
 and type “**regedit**“. Navigate to
 “**HKEY\_LOCAL\_MACHINE SOFTWARE Microsoft WBEM CIMOM**“. In the

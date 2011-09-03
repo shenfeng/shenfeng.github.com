@@ -12,18 +12,19 @@ tags:
 
 ### linux:
 
-1.  software: google chrome git-core vim xvidcap(屏幕录制)
-2.  programming: eclipse, clojure , ant, tomcat, sun-java6-jdk
-    sun-java6-source maven2
-3.  tools: iotop htop rlwrap unrar ﻿﻿ p7zip openssh-server﻿ tmux
-    complacence iptraf rcconfig
-4.  font: inconsolata (console)﻿﻿﻿
+1.  software: google chrome, git-core, vim, xvidcap(屏幕录制)
+2.  programming: eclipse, ant, tomcat, sun-java6-jdk
+    sun-java6-source, maven2, rake, sass, emacs
+3.  tools: iotop htop rlwrap unrar p7zip openssh-server﻿tmux
+    iptraf pktstat(network), ms-sys(create windows bootable flash disk
+    from ISO), nginx
+4.  font: inconsolata (console), Consolas(emacs)
 5.  other: ia32-libs synergy samba VMware
-6.  ms-sys(make windows boot flash disk)
-7.  rake lessc(sudo gem install less)
-8.  all : sudo apt-get install vim git-core sun-java6-jdk
-    sun-java6-source iotop htop rlwrap unrar p7zip openssh-server
-    ia32-libs synergy
+6.  command to install
+{% highlight sh %}
+   sudo apt-get update && apt-get install vim emacs-23 git-core iotop htop rlwrap unrar p7zip pktstat
+   sudo apt-get install sun-java6-jdk sun-java6-source
+{% endhighlight %}
 
 ### windows:
 

@@ -13,20 +13,19 @@ for used with [Ring](https://github.com/mmcgrana/ring)
 
 ### Quick Start
 
-  `[me.shenfeng/ring-netty-adapter "0.0.1-SNAPSHOT"]`
-
 {% highlight clojure %}
-(use 'ring.adapter.netty)
+[me.shenfeng/ring-netty-adapter "0.0.1-SNAPSHOT"]
 
+(use 'ring.adapter.netty)
 (defn app
  [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
    :body    (str "hello word")})
-
 (run-netty app {:port 8080
                 :netty {"reuseAddress" true}})
 {% endhighlight %}
+
 ### netty options
 * connectTimeoutMillis
 * keepAlive
