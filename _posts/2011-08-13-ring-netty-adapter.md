@@ -9,7 +9,9 @@ categories:
 ---
 
 An netty adapter impl on top of [netty](http://www.jboss.org/netty)
-for used with [Ring](https://github.com/mmcgrana/ring)
+for used with
+[Ring](https://github.com/mmcgrana/ring). [Rssminer](http://rssminer.net)
+uses it to build the web server.
 
 ### Quick Start
 
@@ -17,12 +19,12 @@ for used with [Ring](https://github.com/mmcgrana/ring)
 [me.shenfeng/ring-netty-adapter "0.0.1-SNAPSHOT"]
 
 (use 'ring.adapter.netty)
-(defn app
- [req]
+(defn app [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
    :body    (str "hello word")})
 (run-netty app {:port 8080
+                :worker 4 ;; worker thread count
                 :netty {"reuseAddress" true}})
 {% endhighlight %}
 
@@ -33,12 +35,8 @@ for used with [Ring](https://github.com/mmcgrana/ring)
 * tcpNoDelay
 * receiveBufferSize
 * sendBufferSize
-* trafficClass
-* writeBufferHighWaterMark
-* writeBufferLowWaterMark
-* writeSpinCount
 
-see
+more options, refer
 [netty doc](http://docs.jboss.org/netty/3.2/api/org/jboss/netty/channel/socket/nio/NioSocketChannelConfig.html)
 
 ### why
@@ -57,9 +55,6 @@ see
 
 ### Limitation
 
-* Currently, the worker thread is fixed: `cpu` * 2, may not very
-  suited for long running handler due to Blocking jdbc call, etc.
-
 * Serving file is not optimized due to it's better be done by Nginx,
   so as compression.
 
@@ -68,9 +63,39 @@ see
 There is a script `./scripts/start_server` will start netty at port
 3333, jetty at port 4444, here is a result on my machine
 
+{% highlight clojure %}
+(def resp {:status  200
+           :headers {"Content-Type" "text/plain"}
+           :body    "Hello World"})
+{% endhighlight %}
+
 {% highlight sh %}
-  ab -n 300000 -c 50 http://localhost:4444/  #11264.90 [#/sec] (mean)
-  ab -n 300000 -c 50 http://localhost:3333/  #12638.37 [#/sec] (mean)
+  ab -n 300000 -c 50 http://localhost:4444/  #11264.90 [#/sec] (mean) jetty
+  ab -n 300000 -c 50 http://localhost:3333/  #12638.37 [#/sec] (mean) netty
+{% endhighlight %}
+
+### Async(HTTP chunk)
+
+{% highlight clojure %}
+(deftest test-body-chunked
+  (let [async (fn [^Runnable f] (.start (Thread. f)))
+        server (run-netty (fn [req]
+                            (let [chunked (HttpChunked. "Hello ")]
+                              (async (fn [] (Thread/sleep 100)
+                                       (.send chunked "World")
+                                       (async (fn [] (Thread/sleep 100)
+                                                (.close chunked)))))
+                              {:status  200
+                               :headers {"Content-Type" "text/plain"}
+                               :body chunked}))
+                          {:port 4347})]
+    (try
+      (let [resp (http/get "http://localhost:4347")]
+        (is (= (:status resp) 200))
+        (is (= (get-in resp [:headers "content-type"]) "text/plain"))
+        (is (= (get-in resp [:headers "transfer-encoding"]) "chunked"))
+        (is (= (:body resp) "Hello World")))
+      (finally (server)))))
 {% endhighlight %}
 
 ### Contributors
@@ -80,8 +105,3 @@ This repo was fork from
 
 ### Source code
 The source code is in [github](https://github.com/shenfeng/ring-netty-adapter)
-
-### Next steps:
-
-* Find a way to do things asynchronously.
-
