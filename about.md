@@ -8,47 +8,37 @@ title: About
 wordpress_id: '169'
 ---
 
-My name is 沈锋(shen feng), now working at
-[Onycloud](http://onycloud.com) as a software programmer. Before that I have served 3 companies:
-1.  [CSI Technology Group](http://www.csitech.com/), as a programmer
-2.  [Autodesk China Research and Development Center](http://usa.autodesk.com/), as an intern
-3.  [TRS](http://www.trs.com.cn/), as an intern
+My name is 沈锋(shen feng), a software programmer, now working at
+[Onycloud](http://onycloud.com). Before that I have served 2 companies:
 
-I now live in Kunshan (Suzhou), Jiangsu, China.
+1.[Autodesk China Research and Development Center](http://usa.autodesk.com/),
+as an intern
+2.  [TRS](http://www.trs.com.cn/), as an intern
 
-I was born in Dazhu,Sichuan, China.
+I now live in Beijing, China.
 
-I do some coding for fun in my free time, most of them can be find
-here:[shenfeng@github](https://github.com/shenfeng)
+I was born in Dazhu, Sichuan, China.
+
+I do some coding for fun in my free time, most of them can be found on
+[github](https://github.com/shenfeng). These days, spare time is
+devoted to [Rssminer](http://rssminer.net), and intelligent RSS reader.
 
 My personal email is shenedu at gmail dot com.
 
-Here are my few programming's way of saying "Hello world!":
+Here are my few programming way of saying "Hello world!":
 
-**C Version:**
-{% highlight c %}
-    #include <stdio.h>
-    int main(int argc, char *argv[]) {
-        printf("%s","hello world!");
-    }
-{% endhighlight %}
-**C++ Version:**
-{% highlight c++ %}
-    #include <iostream>
-    int main(int argc, char *argv[]) {
-        std::cout<<"hello world!";
-    }
-{% endhighlight %}
-**JAVA Version:**
 {% highlight java %}
-    public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-      }
-    }
+ // Java, the most familiar one
+ public class HelloWorld {
+   public static void main(String[] args) {
+     System.out.println("Hello world!");
+   }
+ }
 {% endhighlight %}
-**Clojure Version:**
+
 {% highlight clojure %}
-    (println "hello world!")
+ ;; Clojure, the favorite one
+ (println "hello world!")
 {% endhighlight %}
+
 [shenfeng.me](http://shenfeng.me) is my personal blog. I use it to do note for life and programming.

@@ -2,23 +2,22 @@
 @import "css3";
 
 $page-width: 990px;
-$left-width: 715px;
-$side-bar-width: $page-width - $left-width - 15px;
+$left-width: 710px;
+$side-bar-width: $page-width - $left-width - 25px;
 
 body {
     background-image: url("/imgs/background.png");
+    padding: 0;
+    margin: 0;
     font: 400 14px/1.5 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
 }
-p {
-    text-align: justify;
-}
-ul {
-    padding-left: 1em;
-}
-#page-wraper { width: $page-width; margin: 0 auto; }
+a { outline: 0; }
+p { text-align: justify; }
+ul { padding-left: 1em; }
+/* #page-wraper { width: $page-width; margin: 0 auto; } */
 #main {
     width: $page-width;
-    margin: 0 auto 50px 0;
+    margin: 0 auto 50px auto;
 }
 #content { width: $left-width; float: left; padding: 3px; }
 #posts > ol { list-style: none; padding: 0; }
@@ -27,8 +26,11 @@ ul {
     border-bottom: 1px #bbb solid;
     margin-bottom: 2em;
 }
-h2 a {
-    text-decoration: none;
+h2 {
+    margin: 0.4em 0;
+    padding: 0.2em 0.1em;
+    &:hover { background: #ddd; }
+    a { text-decoration: none; }
 }
 .copyright { float: right; margin-right: 2em; font-size: 80%;}
 .date {
@@ -47,22 +49,27 @@ h2 a {
     }
 }
 
-.highlight pre { font-family: Consolas, Inconsolata, monospace; }
-
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
 #head {
-    padding: 1em 0;
-    h1 {
-        color: #647C8D;
-        text-shadow: 1px 1px 1px #AAA;
-        a { text-decoration: none; }
+    background: #8E8E8E;
+    .content {
+        width: $page-width;
+        margin: 0 auto;
+        padding: 1em 0;
+    }
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: #FFF4C1;
+        text-shadow: 1px 1px 1px #2D4F80;
     }
     p.subtitle { float: right; margin: -2em 3em 0 0;}
 }
 
 #footer {
+    .content {
+        margin: 0 auto;
+        width: $page-width;
+    }
     border-top: #CCC solid 1px;
     ul {
         padding: 0;
@@ -80,3 +87,7 @@ h2 a {
     }
 }
 
+.highlight pre { font-family: Consolas, Inconsolata, monospace; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
