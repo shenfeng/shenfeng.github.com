@@ -12,12 +12,16 @@ stories I like, and help me discover stories I may like.
 
 I plan to do it by downloading as many web pages
 as possible from the Internet, extract RSS links it contains, download
-them, then apply machine learning algorithms on them. It's ambiguous.
+them, then apply machine learning algorithms on them. It's ambitious.
 
-The first thing need to be solved is an Http client. JDK's URLConnection is
-blocking, 20 threads devoted to it, still not fast enough, and
-there are some Keepalive timer come out the way. The non-blocking AsyncHttpClient
-is tried, But InetAddress.getAllByName(String) is blocking, slow things down.
+The first thing need to be solved is an Http client. JDK's
+[URLConnection](http://download.oracle.com/javase/1.4.2/docs/api/java/net/URLConnection.html)
+is blocking, 20 threads devoted to it, still not fast enough, and
+there are some keepalive timer come out the way. The non-blocking
+[AsyncHttpClient](https://github.com/sonatype/async-http-client) is
+tried, but
+[InetAddress.getAllByName(String)](http://download.oracle.com/javase/1.4.2/docs/api/java/net/InetAddress.html#getAllByName(java.lang.String))
+ is blocking, slow things down.
 
 In order to be fast and memory efficient, I write my own async HTTP client and
 DNS resolver, by using a great library
