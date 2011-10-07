@@ -56,4 +56,6 @@ framework and HTTP codec.
 {% endhighlight %}
 
 The source code is concise, about 1000 lines of code(about 600 lines
-excluding import statements and blank lines), can be found here.
+excluding import statements and blank lines), can be found on
+[github](https://github.com/shenfeng/netty-http).
+

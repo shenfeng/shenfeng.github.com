@@ -22,8 +22,9 @@ tags:
 5.  other: ia32-libs synergy samba VMware
 6.  command to install
 {% highlight sh %}
-   sudo apt-get update && apt-get install vim emacs-23 git-core iotop htop rlwrap unrar p7zip pktstat
-   sudo apt-get install sun-java6-jdk sun-java6-source
+   sudo apt-get update && sudo apt-get install vim emacs23 git-core \
+   iotop htop rlwrap unrar p7zip pktstat sun-java6-jdk \ 
+   sun-java6-source zsh rake ttf-inconsolata ia32-libs tmux
 {% endhighlight %}
 
 ### windows:
