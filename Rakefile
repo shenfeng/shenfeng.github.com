@@ -1,7 +1,6 @@
 require 'tempfile'
 require 'rubygems'
 require 'date'
-require 'closure-compiler'
 
 desc 'Deploy'
 task :deploy => [:clean, :compress] do
@@ -43,3 +42,7 @@ task :compress => :generate do
   end
 end
 
+
+# sudo gem install jekyll
+# sudo apt-get install python-pygments
+# sudo gem install liquid --version '2.2.2'

@@ -37,6 +37,7 @@ window are ordered by top-left point"
                            (window-list)) cmp))
          (index (- (min n (length windows)) 1)))
     (first (nth index windows))))
+
 (defun select-first-window ()
   "Select the top-left most window"
   (interactive)
@@ -93,4 +94,4 @@ equally size every window"
 (global-set-key [f1] 'delete-other-windows)
 {% endhighlight %}
 
-这样就可以F1, F12, M-1, M-2, M-2进行快速的切换。倒是挺方便。
+这样就可以F1, F12, M-1, M-2, M-3进行快速的切换。倒是挺方便。

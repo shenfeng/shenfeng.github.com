@@ -16,7 +16,7 @@ uses it to build the web server.
 ### Quick Start
 
 {% highlight clojure %}
-[me.shenfeng/ring-netty-adapter "0.0.1-SNAPSHOT"]
+[me.shenfeng/async-ring-adapter "1.0.0"]
 
 (use 'ring.adapter.netty)
 (defn app [req]
@@ -74,34 +74,10 @@ There is a script `./scripts/start_server` will start netty at port
   ab -n 300000 -c 50 http://localhost:3333/  #12638.37 [#/sec] (mean) netty
 {% endhighlight %}
 
-### Async(HTTP chunk)
-
-{% highlight clojure %}
-(deftest test-body-chunked
-  (let [async (fn [^Runnable f] (.start (Thread. f)))
-        server (run-netty (fn [req]
-                            (let [chunked (HttpChunked. "Hello ")]
-                              (async (fn [] (Thread/sleep 100)
-                                       (.send chunked "World")
-                                       (async (fn [] (Thread/sleep 100)
-                                                (.close chunked)))))
-                              {:status  200
-                               :headers {"Content-Type" "text/plain"}
-                               :body chunked}))
-                          {:port 4347})]
-    (try
-      (let [resp (http/get "http://localhost:4347")]
-        (is (= (:status resp) 200))
-        (is (= (get-in resp [:headers "content-type"]) "text/plain"))
-        (is (= (get-in resp [:headers "transfer-encoding"]) "chunked"))
-        (is (= (:body resp) "Hello World")))
-      (finally (server)))))
-{% endhighlight %}
-
 ### Contributors
 
 This repo was fork from
 [datskos](https://github.com/datskos/ring-netty-adapter)
 
 ### Source code
-The source code is in [github](https://github.com/shenfeng/ring-netty-adapter)
+The source code is in [github](https://github.com/shenfeng/async-ring-adapter)

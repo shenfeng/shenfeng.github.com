@@ -6,7 +6,7 @@ $left-width: 710px;
 $side-bar-width: $page-width - $left-width - 25px;
 
 body {
-    background-image: url("/imgs/background.png");
+    background-image: url(/imgs/background.png);
     padding: 0;
     margin: 0;
     font: 400 14px/1.5 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
@@ -14,6 +14,12 @@ body {
 a { outline: 0; }
 p { text-align: justify; }
 ul { padding-left: 1em; }
+p code, li > code {
+    background-color: #DDD;
+    padding: 0.4em .2em 0;
+    font-size: 90%;
+    color: #444;
+}
 /* #page-wraper { width: $page-width; margin: 0 auto; } */
 #main {
     width: $page-width;
@@ -29,8 +35,10 @@ ul { padding-left: 1em; }
 h2 {
     margin: 0.4em 0;
     padding: 0.2em 0.1em;
-    &:hover { background: #ddd; }
-    a { text-decoration: none; }
+    a {
+        text-decoration: none;
+        &:hover { text-decoration: underline; }
+    }
 }
 .copyright { float: right; margin-right: 2em; font-size: 80%;}
 .date {
@@ -93,7 +101,7 @@ img {
     box-shadow: 0 0 10px #666;
 }
 
-.highlight pre { font-family: Consolas, Inconsolata, monospace; }
+.highlight pre, code { font-family: Consolas, Inconsolata, monospace; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }

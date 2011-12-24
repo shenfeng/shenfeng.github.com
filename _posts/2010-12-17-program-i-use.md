@@ -17,13 +17,13 @@ tags:
     sun-java6-source, maven2, rake, sass, emacs
 3.  tools: iotop htop rlwrap unrar p7zip openssh-server﻿tmux
     iptraf pktstat(network), ms-sys(create windows bootable flash disk
-    from ISO), nginx
+    from ISO), nginx, curl,
 4.  font: inconsolata (console), Consolas(emacs)
 5.  other: ia32-libs synergy samba VMware
 6.  command to install
 {% highlight sh %}
    sudo apt-get update && sudo apt-get install vim emacs23 git-core \
-   iotop htop rlwrap unrar p7zip pktstat sun-java6-jdk \ 
+   iotop htop rlwrap unrar p7zip pktstat sun-java6-jdk \
    sun-java6-source zsh rake ttf-inconsolata ia32-libs tmux
 {% endhighlight %}
 

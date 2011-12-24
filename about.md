@@ -9,11 +9,11 @@ wordpress_id: '169'
 ---
 
 My name is 沈锋(shen feng), a software programmer, now working at
-[Onycloud](http://onycloud.com). Before that I have served 2 companies:
+[AVOS China](http://china.avos.com). Before that I have served 2 companies:
 
-1.[Autodesk China Research and Development Center](http://usa.autodesk.com/),
+1. [Autodesk China Research and Development Center](http://usa.autodesk.com/),
 as an intern
-2.  [TRS](http://www.trs.com.cn/), as an intern
+2. [TRS](http://www.trs.com.cn/), as an intern
 
 I now live in Beijing, China.
 
