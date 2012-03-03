@@ -101,7 +101,10 @@ img {
     box-shadow: 0 0 10px #666;
 }
 
-.highlight pre, code { font-family: Consolas, Inconsolata, monospace; }
+.highlight pre, code {
+    font-family: Consolas, Inconsolata, monospace;
+    font-size: 13px;
+}
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
