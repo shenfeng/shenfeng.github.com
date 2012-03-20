@@ -18,16 +18,17 @@ using `binary search`. The RES is about `9M` when concurrent connection
 is not high, say, blow 1k.
 
 I handcrafted the web server in pure C with epoll. It serves static
-file and word lookup request. The performance is amazing, `when 800k socket connection is kept, 54.3k req/s`
+file and word lookup request. The performance is amazing,
+`54.3k req/s, when 800k socket connections are kept`
 
 ## Test Machine
 
-Service and test app are run on the same computer.
+Server and test app are run on the same computer.
 * `Mem`: 16G
 * `CPU`: Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz
 * `OS` : GUN/Linux Debian 3.1.0-1-amd64
 
-Several config to Linux:
+Several config for Linux:
 
 {% highlight sh %}
 # set up virtual network interface,
@@ -43,6 +44,8 @@ sudo sysctl -w net.ipv4.ip_local_port_range="1025 65535"
 {% endhighlight %}
 
 ## 800K concurrent connection
+Test code, written in java, Memory usage: `RES`: `142M` (from `htop`)
+
 {% highlight java %}
 public class MakeupIdelConnection {
     final static int STEPS = 10;
@@ -111,11 +114,11 @@ public class MakeupIdelConnection {
     }
 }
 {% endhighlight %}
-Memory usage: `RES`: `142M` (from `htop`)
 
 ## 53.4k req/s
 
-When 800K connection is kept
+When 800K connection is kept, CPU usage: about `65%` of a single core.
+
 {% highlight java %}
 class SelectAttachment {
     private static final Random r = new Random();
@@ -242,7 +245,6 @@ public class PerformanceBench {
 }
 {% endhighlight %}
 
-CPU usage: about `65%` of a single core.
 
 ## Source code
 It's on github,

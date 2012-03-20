@@ -29,13 +29,9 @@ categories:
 (function () {
   //  private. given by closure
   var private_var = 1;
-
-  var helper1 = function () {
-  };
-
+  var helper1 = function () { };
   // namespace: YOUR_NS. given by javascript's global object
   window.YOUR_NS = window.YOUR_NS || {};
-
   window.YOUR_NS.utils = {
     helper1: helper1            // export, public
   };
@@ -44,19 +40,13 @@ categories:
 {% endhighlight %}
 
 {% highlight js %}
-
 // app.js
 (function () {
-
   // like java's import, c++'s using namespace
   var utils = window.YOUR_NS.utils;
-
-  // rename
-  var utils2 = window.YOUR_NS.utils;
-
+  var utils2 = window.YOUR_NS.utils;  // rename
   // direct import, java's import static
   var helper1 = utils.helper1;
-
   // you app's logic here
   utils.helper1();              // smaple usage
   utils2.helper1();             // smaple usage
