@@ -9,7 +9,7 @@ categories:
 - emacs
 ---
 
-我们在昆山的团队中另外3个都用[GNU Emacs](www.gnu.org/software/emacs/)，
+我们在昆山的团队中另外3个都用[GNU Emacs](http://www.gnu.org/software/emacs/)，
 为了更容易的和他们的代码风格保持一致，
 我也试着学了一下。一学也有三个月了。
 
