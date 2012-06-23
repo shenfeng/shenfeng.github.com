@@ -3,7 +3,7 @@ author: feng
 date: '2012-2-01 20-21-00'
 layout: post
 status: publish
-desc: Online English dictionary written in c with epoll, it's super fast, 800k concurrent connection, 53.4k req/s
+desc: Online English dictionary written in c with epoll, it's super fast, 1600k concurrent connection, 57.3k req/s
 title: How far epoll can push concurrent socket connection
 categories:
 - performance
@@ -19,7 +19,7 @@ is not high, say, blow 1k.
 
 I handcrafted the web server in pure C with epoll. It serves static
 file and word lookup request. The performance is amazing,
-`54.3k req/s, when 800k socket connections are kept`
+`57.3k req/s, when 1600k socket connections are kept`
 
 ## Test Machine
 
@@ -28,23 +28,37 @@ Server and test app are run on the same computer.
 * `CPU`: Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz
 * `OS` : GUN/Linux Debian 3.1.0-1-amd64
 
-Several config for Linux:
+### Several config for Linux:
 
 {% highlight sh %}
+
 # set up virtual network interface,
 # test client bind to these IP, then connect
-for i in `seq 21 37`; do sudo ifconfig eth0:$i 192.168.1.$i up ; done
+for i in `seq 21 87`; do sudo ifconfig eth0:$i 192.168.1.$i up ; done
 
 # more ports for testing
 sudo sysctl -w net.ipv4.ip_local_port_range="1025 65535"
+# tcp read buffer, min, default, maximum
+sudo sysctl -w net.ipv4.tcp_rmem="4096 4096 16777216" 
+# tcp write buffer, min, default, maximum
+sudo sysctl -w net.ipv4.tcp_wmem="4096 4096 16777216" 
+echo 9999999 | sudo tee /proc/sys/fs/nr_open
+echo 9999999 | sudo tee /proc/sys/fs/file-max
 
 # edit /etc/security/limits.conf, add line
-# * - nofile 999999
+# * - nofile 9999999
 
 {% endhighlight %}
 
-## 800K concurrent connection
-Test code, written in java, Memory usage: `RES`: `142M` (from `htop`)
+### Command to show status
+{% highlight sh %}
+
+cat /proc/net/sockstat
+
+{% endhighlight %}
+
+## 1600K concurrent connection. C1600k.
+Test code, written in JAVA
 
 {% highlight java %}
 public class MakeupIdelConnection {
@@ -52,25 +66,10 @@ public class MakeupIdelConnection {
     final static int connectionPerIP = 50000;
     public static void main(String[] args) throws IOException {
         final Selector selector = Selector.open();
-        InetSocketAddress locals[] = {
-                new InetSocketAddress("192.168.1.22", 9090),
-                new InetSocketAddress("192.168.1.23", 9090),
-                new InetSocketAddress("192.168.1.24", 9090),
-                new InetSocketAddress("192.168.1.25", 9090),
-                new InetSocketAddress("192.168.1.26", 9090),
-                new InetSocketAddress("192.168.1.27", 9090),
-                new InetSocketAddress("192.168.1.28", 9090),
-                new InetSocketAddress("192.168.1.29", 9090),
-                new InetSocketAddress("192.168.1.30", 9090),
-                new InetSocketAddress("192.168.1.31", 9090),
-                new InetSocketAddress("192.168.1.32", 9090),
-                new InetSocketAddress("192.168.1.33", 9090),
-                new InetSocketAddress("192.168.1.34", 9090),
-                new InetSocketAddress("192.168.1.35", 9090),
-                new InetSocketAddress("192.168.1.36", 9090),
-                new InetSocketAddress("192.168.1.37", 9090),
-
-        };
+        InetSocketAddress locals[] = new InetSocketAddress[32];
+        for (int i = 0; i < locals.length; i++) {
+            locals[i] = new InetSocketAddress("192.168.1." + (21 + i), 9090);
+        }
         long start = System.currentTimeMillis();
         int connected = 0;
         int currentConnectionPerIP = 0;
@@ -115,9 +114,9 @@ public class MakeupIdelConnection {
 }
 {% endhighlight %}
 
-## 53.4k req/s
+## 57.3k req/s
 
-When 800K connection is kept, CPU usage: about `65%` of a single core.
+When 1600K connections are kept.
 
 {% highlight java %}
 class SelectAttachment {
