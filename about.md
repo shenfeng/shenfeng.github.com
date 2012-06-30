@@ -41,7 +41,7 @@ on [github](https://github.com/shenfeng).
    Database connection pool by using ThreadLocal. Powers Rssminer.
 6. [MMSEG](https://github.com/shenfeng/mmseg): A lucene chinese text
    Tokenizer. Powers Rssminer
-7. [Dictionary](http://shenfeng.me:9090/): An online English-English
+7. [Dictionary](http://dict.shenfeng.me/): An online English-English
    dictionary. In C, with
    [great performance](/how-far-epoll-can-push-concurrent-socket-connection.html)
 8. [Tiny web server](https://github.com/shenfeng/tiny-web-server): A

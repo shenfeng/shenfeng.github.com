@@ -9,7 +9,7 @@ categories:
 - performance
 ---
 
-I wrote an [online dictionary](http://shenfeng.me:9090/) in pure C in
+I wrote an [online dictionary](http://dict.shenfeng.me/) in pure C in
 Spring festival.
 
 The dictionary data(about `8.2M`, file `dbdata`) is compressed and loaded into
@@ -39,9 +39,9 @@ for i in `seq 21 87`; do sudo ifconfig eth0:$i 192.168.1.$i up ; done
 # more ports for testing
 sudo sysctl -w net.ipv4.ip_local_port_range="1025 65535"
 # tcp read buffer, min, default, maximum
-sudo sysctl -w net.ipv4.tcp_rmem="4096 4096 16777216" 
+sudo sysctl -w net.ipv4.tcp_rmem="4096 4096 16777216"
 # tcp write buffer, min, default, maximum
-sudo sysctl -w net.ipv4.tcp_wmem="4096 4096 16777216" 
+sudo sysctl -w net.ipv4.tcp_wmem="4096 4096 16777216"
 echo 9999999 | sudo tee /proc/sys/fs/nr_open
 echo 9999999 | sudo tee /proc/sys/fs/file-max
 
