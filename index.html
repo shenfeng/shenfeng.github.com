@@ -7,7 +7,7 @@ desc: I'm shenfeng(沈锋), a programmer. This is my personal site, used to trac
 {% assign first_post = site.posts.first %}
 <div id="posts">
   <ol>
-    {% for post in site.posts limit: 10 %}
+    {% for post in site.posts limit: 4 %}
       <li class="post">{% include post.html %}</li>
     {% endfor %}
   </ol>
