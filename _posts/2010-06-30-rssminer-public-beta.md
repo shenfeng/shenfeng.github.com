@@ -5,8 +5,7 @@ layout: post
 status: publish
 desc: Rssminer - an intelligent RSS reader, is public beta now.
 title: Rssminer public beta
-categories:
-- rssminer
+categories: ['rssminer', 'clojure']
 ---
 
 [Rssminer](http://rssminer.net) is a simple online
@@ -19,7 +18,7 @@ Clojure, Java, Javascript.
 * Concise UI.
 * Read the orignal article, which may include valuable comments.
 * Learing from reading history, rank all articles accordingly.
-* Fast, Instant full text search. 
+* Fast, Instant full text search.
 
 ### A brief history
 
@@ -31,7 +30,7 @@ APP, client side unit testing. A RSS reader is choosen by accident.
   got read several times.
 3. [Function](http://en.wikipedia.org/wiki/Functional_programming) and
   [Object literal](https://developer.mozilla.org/en/JavaScript/Guide/Values,_Variables,_and_Literals)
-  are the best parts of Javascript. They complement each other. 
+  are the best parts of Javascript. They complement each other.
   Backbone fail to utilize them efficiently.
 4. I did many expriments and thinking. By dropping Backone.js, take my brain as the backone,
    [structure the code](https://github.com/shenfeng/rssminer/tree/master/public/js/rssminer)
@@ -49,7 +48,7 @@ I like fast application. In order to be fast,
   scratch to power Rssminer, to achieve low lantency.
 * A [HTTP Client](https://github.com/shenfeng/http-kit),
   written from scratch to power the fetcher module.
-* A fast [Template](https://github.com/shenfeng/mustache.clj). 
+* A fast [Template](https://github.com/shenfeng/mustache.clj).
   With it, I can easily pack the minified CSS with the HTML to save a
   network round trip. It bootstrap the application.
 * Browser talks to server in JSON. Render HTML in browser side achieves

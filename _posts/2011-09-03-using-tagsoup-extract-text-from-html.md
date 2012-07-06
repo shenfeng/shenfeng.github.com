@@ -4,6 +4,7 @@ date: '2011-09-03 20-21-00'
 layout: post
 status: publish
 title: Using TagSoup to extract text from HTML
+categories: ['clojure']
 ---
 
 
