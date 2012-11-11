@@ -30,7 +30,7 @@ Eclipse `Ctrl-q` ， Intellj `Shift+Command+Delete` Last Edit Location
 ## [feng-highlight](https://github.com/shenfeng/dotfiles/blob/master/emacs.d/feng-highlight.el)
 
 Eclipse和Intellj都有高亮光标下变量，函数等功能，挺实用。
-![image](/imgs/eclipse-hl.png)
+![image](http://shenfeng.me/imgs/eclipse-hl.png)
 
 Emacs也有类似的：`idle-highlight-mode` 。
 
@@ -56,7 +56,7 @@ Emacs也有类似的：`idle-highlight-mode` 。
 * `M-p` 下一个
 * `M-r` 替换
 
-![image](/imgs/emacs-hl.png)
+![image](http://shenfeng.me/imgs/emacs-hl.png)
 
 今天光棍节，上午试着用了一会儿，截图就是应用于golang。
 
