@@ -9,7 +9,7 @@ body {
     background-image: url(/imgs/background.png);
     padding: 0;
     margin: 0;
-    font: 400 14px/1.5 'Lucida Grande', "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font: 400 14px/1.55 'Lucida Grande', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 a { outline: 0; }
 h1 { margin: 0; }
@@ -109,3 +109,10 @@ img {
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+blockquote {
+    margin: 13px;
+    font-size: 15px;
+    padding:0 7px;
+    background: #f1f0ea;
+}
