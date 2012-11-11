@@ -14,7 +14,7 @@ body {
 a { outline: 0; }
 h1 { margin: 0; }
 p { text-align: justify; }
-#side-bar ul { padding-left: 1em; }
+/* #side-bar ul { padding-left: 1em; } */
 p code, li > code {
     background-color: #DDD;
     padding: 0.4em .2em 0;
@@ -51,6 +51,10 @@ h2 {
     float: right;
     font-size: 90%;
     width: $side-bar-width;
+    ul {
+        list-style: none;
+        padding: 0;
+    }
     li { padding: 2px 0 3px 0; }
     a {
         text-decoration: none;

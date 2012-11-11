@@ -21,31 +21,34 @@
       <div class="clearfix" id="main">
         <div id="content">{{ content }}</div>
         <div id="side-bar">
-          <h3>Recent:</h3>
-          <ul id="rencents">
-            {% for post in site.posts %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-          </ul>
           <h3>Links:</h3>
           <ul>
-            <li><a href="https://trakrapp.com/" target="_blank"
-                   title="our proud product, an awesome issue
-                          tracking system">
-                Trakr, issue tracking reinvented</a></li>
             <li>
               <a href="http://rssminer.net/" target="_blank"
                  title="an intelligent rss reader">
                 RSS miner, an intelligent reader</a>
             </li>
+            <li><a href="https://trakrapp.com/" target="_blank"
+                   title="our proud product, an awesome issue
+                          tracking system">
+                Trakr, issue tracking reinvented</a></li>
             <li>
               <a href="http://dict.shenfeng.me" target="_blank"
                  title="a simple and easy to use english-english dictionary">
                 English-English dictionary</a>
             </li>
             <li>
-              <a href="http://mei.fm">美味书签</a>
+              <a href="http://meiweisq.com">美味书签</a>
             </li>
+            <li>
+              <a href="http://meiwei.fm">美味集</a>
+            </li>
+          </ul>
+          <h3>Recent:</h3>
+          <ul id="rencents">
+            {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>
