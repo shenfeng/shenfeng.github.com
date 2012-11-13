@@ -15,6 +15,7 @@ task :css do
     target = source.sub(/\.scss$/, ".css").sub(/^scss/, 'css')
     sh "sass -t compressed --cache-location /tmp #{source} #{target}"
   end
+  sh "cp css/site.css _site/css/site.css"
 end
 
 desc "Delete generate files"
