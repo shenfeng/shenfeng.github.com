@@ -136,3 +136,24 @@ blockquote {
     padding:0 7px;
     background: #f1f0ea;
 }
+
+#post-pagination {
+    ul { padding: 0; margin: 0; }
+    li {
+        display: inline-block;
+        a {
+            padding: 3px 10px;
+            display: block;
+            &:hover {
+                background: #ccc;
+            }
+        }
+    }
+    .current-page {
+        padding: 3px 10px;
+        font-weight: bold;
+    }
+    .page-number {
+        margin-right: 20px;
+    }
+}

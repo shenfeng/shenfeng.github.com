@@ -7,8 +7,35 @@ desc: I'm shenfeng(沈锋), a programmer. This is my personal site, used to trac
 {% assign first_post = site.posts.first %}
 <div id="posts">
   <ol>
-    {% for post in site.posts limit: 4 %}
-      <li class="post">{% include post.html %}</li>
+    {% for post in paginator.posts %}
+    <li class="post">{% include post.html %}</li>
     {% endfor %}
   </ol>
+</div>
+
+<div id="post-pagination" class="pagination">
+  <ul class="pages">
+    <li class="page-number">
+      <span>Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+    </li>
+    <li class="page">
+      {% if paginator.page == 1 %}
+      <span class="current-page">1</span>
+      {% else %}
+      <a href="/">1</a>
+      {% endif %}
+    </li>
+    {% for count in (2..paginator.total_pages) %}
+    <li>
+      {% if count == paginator.page %}
+      <span class="current-page">{{count}}</span>
+      {% else %}
+      <a href="/page{{count}}/index.html">{{count}}</a>
+      {% endif %}
+    </li>
+    {% endfor %}
+    {% if paginator.next_page %}
+    <li><a href="/page{{paginator.next_page}}/index.html" class="next ">Next</a></li>
+    {% endif %}
+  </ul>
 </div>

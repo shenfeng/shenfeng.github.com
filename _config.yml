@@ -3,3 +3,4 @@ permalink: /:title.html
 url: http://shenfeng.me
 pygments: tue
 exclude: [scss, bin, Rakefile]
+paginate: 5
