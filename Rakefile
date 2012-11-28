@@ -10,6 +10,7 @@ end
 desc 'Compile scss, Compress generated css'
 task :css do
   sh "mkdir -p css"
+  sh "mkdir -p _site/css"
   scss = FileList['scss/**/*.scss'].exclude('scss/**/_*.scss')
   scss.each do |source|
     target = source.sub(/\.scss$/, ".css").sub(/^scss/, 'css')
