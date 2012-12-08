@@ -22,4 +22,13 @@ layout: default
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
+<script>
+  var post = document.getElementsByClassName('post')[0];
+  if(post && post.querySelectorAll) {
+    var links = post.querySelectorAll('a');
+    for(var i = 0; i < links.length; i++) {
+      var a = links[i];
+      a.setAttribute('target', '_blank');
+    }
+  }
+</script>
