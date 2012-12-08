@@ -11,6 +11,19 @@ body {
     margin: 0;
     font: 400 14px/1.55 'Lucida Grande', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+
+#rss-icon {
+    float: right;
+    img {
+        width: 40px;
+        height: 40px;
+        box-shadow: none;
+        margin: 0;
+        padding: 0 20px;
+    }
+}
+
 a { outline: 0; }
 h1 { margin: 0; }
 p { text-align: justify; }
@@ -95,7 +108,7 @@ h2 {
         }
     /* text-shadow: 1px 1px 1px #2D4F80; */
     }
-    p.subtitle { float: right; margin: -2em 3em 0 0;}
+    p.subtitle { float: right; margin: -2em 5em 0 0;}
 }
 
 #footer {
