@@ -7,7 +7,7 @@ title: A new Clojure HTTP client, concurrent made easy by asynchronous and promi
 categories: ['http-kit', 'clojure']
 ---
 
-[http-kit](https://github.com/shenfeng/http-kit) is a clean and compact event driven Clojure HTTP toolkit, writen from scratch for high performance Clojure applications. It consists
+[http-kit](https://github.com/http-kit/http-kit) is a clean and compact event driven Clojure HTTP toolkit, writen from scratch for high performance Clojure applications. It consists
 1. Ring compatible adapter with async and websocket support
 2. Fast, asynchronous HTTP client, API modeled after `clj-http`
 
@@ -32,8 +32,8 @@ Compare with the very good Clojure HTTP client [clj-http](https://github.com/dak
 The API is learn from clj-http: `request`, `get`, `post`, `put`, `head`, `delete`
 
 {% highlight clojure %}
-[me.shenfeng/http-kit "2.0-rc1"]
-(:require [me.shenfeng.http.client :as http])
+[http-kit "2.0-rc1"]
+(:require [org.httpkit.client :as http])
 
 ; http/post, http/head, http/put, http/delete
 ; issue http request asynchronous. return a promise, deref to get the response
@@ -92,6 +92,6 @@ The API is learn from clj-http: `request`, `get`, `post`, `put`, `head`, `delete
 
 ## Open source
 
-More information, feature suggestion, bug report on [https://github.com/shenfeng/http-kit](https://github.com/shenfeng/http-kit)
+More information, feature suggestion, bug report on [https://github.com/http-kit/http-kit](https://github.com/http-kit/http-kit)
 
 Pull request welcome!
