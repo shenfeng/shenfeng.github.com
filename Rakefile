@@ -32,8 +32,7 @@ end
 
 desc "Watch for change"
 task :watch => :generate do
-  sh "while inotifywait -r -e modify scss/ _layouts _posts _includes;
-       do rake generate; done"
+  sh "http-watcher -ignores _site -command ./preprocess"
 end
 
 desc "Compress html"
