@@ -10,11 +10,8 @@ wordpress_id: '169'
 
 ## About me
 
-My name is 沈锋(shen feng), a software programmer, now working at
-[AVOS China](http://team.mei.fm).
-
-Most of my working time is devoted to
-[美味书签](http://mei.fm). Currently, I am focusing on the frontend side.
+My name is 沈锋(shen feng), a programmer, now working at
+[AVOS China](http://team.mei.fm). Most of my working time is devoted to [美味书签](http://meiweisq.com).
 
 Before that I have served 2 companies:
 
@@ -22,35 +19,24 @@ Before that I have served 2 companies:
 as an intern
 2. [TRS](http://www.trs.com.cn/), as an intern
 
-I now live in Beijing, China.
+I now live in Beijing, China, reach me by shenedu at gmail dot com.
 
-I was born in Dazhu, Sichuan, China.
+I do coding for fun in my free time: [https://github.com/shenfeng](https://github.com/shenfeng).
 
-I do coding for fun in my free time, the source code can be found
-on [github](https://github.com/shenfeng).
-
-1. [Rssminer](http://rssminer.net): an intelligent RSS reader.
-2. [Http Server](https://github.com/shenfeng/http-kit): a JAVA NIO
-   implementation of HTTP server, a library, powers Rssminer.
-3. [Http Client](https://github.com/shenfeng/http-kit): a JAVA NIO
-   implementation of HTTP client, a library, powers Rssminer.
-4. [Mustache.clj](https://github.com/shenfeng/mustache.clj). A fast
-   (but incomplete) JAVA implementation of [Mustache](http://mustache.github.com/) for
-   Clojure, powers Rssminer.
-5. [DBCP](https://github.com/shenfeng/dbcp): A implementation of
-   Database connection pool by using ThreadLocal. Powers Rssminer.
+1. [rssminer](http://rssminer.net): yet another free RSS reader, try it out.
+2. [http-kit](https://github.com/http-kit/http-kit): Event driven HTTP server and HTTP client for Clojure
+3. [http-watcher](https://github.com/shenfeng/http-watcher): A Web Server for Web developers: automatically reload browsers when file changed
+4. [mustache.clj](https://github.com/shenfeng/mustache.clj). [Mustache](http://mustache.github.com/) template system implementation for Clojure, very fast.
+5. [DBCP](https://github.com/shenfeng/dbcp): Database connection pool by using ThreadLocal
 6. [MMSEG](https://github.com/shenfeng/mmseg): A lucene chinese text
    Tokenizer. Powers Rssminer
-7. [Dictionary](http://dict.shenfeng.me/): An online English-English
-   dictionary. In C, with
-   [great performance](/how-far-epoll-can-push-concurrent-socket-connection.html)
-8. [Tiny web server](https://github.com/shenfeng/tiny-web-server): A
+7. [dictionary](http://dict.shenfeng.me/): An online English-English
+   dictionary. In pure C with epoll in server side.
+8. [tiny web server](https://github.com/shenfeng/tiny-web-server): A
    small Web server in C for daily use.
 9. [async-http-client](https://github.com/shenfeng/async-http-client): A
    HTTP client on top of [netty](http://netty.io). Support
    [SOCKS V5](http://en.wikipedia.org/wiki/SOCKS), HTTP Proxy. Support HTTPS.
-
-MY personal email is shenedu at gmail dot com.
 
 Here are my few programming way of saying "Hello world!":
 

@@ -39,7 +39,17 @@ p code, li > code {
     width: $page-width;
     margin: 0 auto 50px auto;
 }
-#content { width: $left-width; float: left; padding: 3px; }
+
+em {
+    color: #b00;
+}
+
+#content {
+    width: $left-width; float: left; padding: 3px;
+    li {
+        padding: 2px 0 3px 0;
+    }
+}
 #posts > ol { list-style: none; padding: 0; }
 #posts .post {
     padding-bottom: 2em;

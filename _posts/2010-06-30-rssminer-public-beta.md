@@ -44,9 +44,9 @@ APP, client side unit testing. A RSS reader is choosen by accident.
 I like fast application. In order to be fast,
 
 * The application is carefully designed .
-* A [WEB server](https://github.com/shenfeng/http-kit), written from
+* A [WEB server](https://github.com/http-kit/http-kit), written from
   scratch to power Rssminer, to achieve low lantency.
-* A [HTTP Client](https://github.com/shenfeng/http-kit),
+* A [HTTP Client](https://github.com/http-kit/http-kit),
   written from scratch to power the fetcher module.
 * A fast [Template](https://github.com/shenfeng/mustache.clj).
   With it, I can easily pack the minified CSS with the HTML to save a

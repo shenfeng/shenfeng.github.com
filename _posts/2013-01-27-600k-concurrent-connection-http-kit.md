@@ -7,7 +7,7 @@ title: 600k concurrent HTTP connections, with Clojure & http-kit
 categories: ['http-kit', 'clojure']
 ---
 
-*original [http://http-kit.org/600k-concurrent-connection-http-kit.html](http://http-kit.org/600k-concurrent-connection-http-kit.html)*
+*Original: [http://http-kit.org/600k-concurrent-connection-http-kit.html](http://http-kit.org/600k-concurrent-connection-http-kit.html)*
 
 *Edit(2013/1/29):*
 http-kit is a event driven HTTP server & client for Clojure. It's open source, [https://github.com/http-kit](https://github.com/http-kit)
