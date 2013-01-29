@@ -58,6 +58,6 @@ http-watcher -port=8000 －root={代码目录} -proxy={动态程序端口}
 可checkout 代码，自己编译 `go build`，也可以下载
 
 ### 下载地址
-1. [Linux](http://http-watcher.googlecode.com/files/http-watcher-osx)
-2. [Mac OS X](http://http-watcher.googlecode.com/files/http-watcher-linux)
+1. [Linux](http://http-watcher.googlecode.com/files/http-watcher-linux)
+2. [Mac OS X](http://http-watcher.googlecode.com/files/http-watcher-osx)
 3. [Windows](http://http-watcher.googlecode.com/files/http-watcher-win.exe)
