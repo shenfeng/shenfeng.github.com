@@ -10,14 +10,14 @@ wordpress_id: '169'
 
 ## About me
 
-My name is 沈锋(shen feng), a programmer, now working at
-[AVOS China](http://team.mei.fm). Most of my working time is devoted to [美味书签](http://meiweisq.com).
+My name is 沈锋(shen feng), a programmer, 现在在寻找一个开发工作，[简历](/resume/index.html)
 
 Before that I have served 2 companies:
 
-1. [Autodesk China Research and Development Center](http://usa.autodesk.com/),
+1. [AVOS China](http://team.mei.fm)
+2. [Autodesk China Research and Development Center](http://usa.autodesk.com/),
 as an intern
-2. [TRS](http://www.trs.com.cn/), as an intern
+3. [TRS](http://www.trs.com.cn/), as an intern
 
 I now live in Beijing, China, reach me by shenedu at gmail dot com.
 
