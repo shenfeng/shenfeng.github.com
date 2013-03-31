@@ -12,7 +12,7 @@ wordpress_id: '169'
 
 My name is 沈锋(shen feng), a programmer, 现在在寻找一个开发工作，[简历](/resume/index.html)
 
-Before that I have served 2 companies:
+Before that I have served 3 companies:
 
 1. [AVOS China](http://team.mei.fm)
 2. [Autodesk China Research and Development Center](http://usa.autodesk.com/),
