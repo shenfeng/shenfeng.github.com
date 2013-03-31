@@ -1,0 +1,40 @@
+#page-wrap {
+    width: 900px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+sub {
+    color: #777;
+    font-size: 12px;
+}
+
+#info td:first-child {
+    width: 100px;
+    font-weight: bold;
+}
+
+body {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.work .date {
+    font-size: 12px;
+    font-weight: normal;
+    color: #777;
+}
+
+.info {
+    color: #555;
+    padding: 0;
+    margin: 4px 0;
+}
+
+h3 a, h4 a {
+    font-size: 13px;
+    font-weight: normal;
+}
