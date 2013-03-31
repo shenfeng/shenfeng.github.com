@@ -22,7 +22,7 @@ body {
     font-size: 14px;
 }
 
-.work .date {
+.date {
     font-size: 12px;
     font-weight: normal;
     color: #777;
@@ -37,4 +37,13 @@ body {
 h3 a, h4 a {
     font-size: 13px;
     font-weight: normal;
+}
+
+#profile {
+    float: right;
+    width: 190px;
+}
+
+#info {
+    width: 700px;
 }

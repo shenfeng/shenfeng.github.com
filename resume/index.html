@@ -10,6 +10,8 @@
     <div id="page-wrap">
       <div class="section">
         <h2>基本信息</h2>
+        <img id="profile"
+           src="https://secure.gravatar.com/avatar/0d3797cb1e143e1db0a4db401253c6a3?s=190"/>
         <table id="info">
           <tr>
             <td>姓名</td>
@@ -41,20 +43,26 @@
           </tr>
           <tr>
             <td>工作经验</td>
-            <td> 2.75年（全职工作），4.75年（算上实习） </td>
+            <td> 2.75年（全职工作），4年（算上实习） </td>
           </tr>
           <tr>
             <td>职业技能</td>
             <td>
               <ul>
-                <li>熟练的前端工程师，对CSS/JS/HTML有较好的理解，一起玩耍5年有余，感情深厚，经验丰富</li>
+                <li>一条龙服务：前段页面，后端存储，数据库调优，系统调优，自动化部署，监控</li>
+                <li>熟练的前端工程师，对CSS/JS/HTML有较好的理解，5年有余，感情深厚，经验丰富</li>
                 <li>熟悉HTTP协议，实现过多次HTTP sever和client</li>
                 <li>对网络编程有一些经验，实现过HTTP/WebSocket/FTP/DNS/SOCKS协议（有些是部分）</li>
-                <li>对线程，线程安全有一些体会，能写出利用多核，线程安全并模型简单的程序</li>
-                <li>一个人可以从前端干到后端，并自动化部署</li>
-                <li>熟悉MySQL</li>
-                <li>Java/Javascript/C/Clojure/Python/Go/Bash</li>
+                <li>对线程，线程安全，concurrency有一些体会，能写出充分利用多核，线程安全，模型简单，性能强悍的程序</li>
+                <li>Java/Javascript/C/Clojure/Python/Go/Bash/HTML/CSS</li>
+                <li>Linuxer</li>
               </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>求职目标</td>
+            <td>
+              偏后台，偏底层的开发职位。
             </td>
           </tr>
         </table>
@@ -62,7 +70,7 @@
       <div class="section work">
         <h2>工作经历</h2>
         <p class="info">正式参加工作以来，公司名换了3次，老大还是一个人</p>
-        <ul>
+        <ol>
           <li>
             <h3>AVOS China  <a href="http://team.mei.fm">http://team.mei.fm</a>
               <span class="date">2011/9-2013-4</span></h3>
@@ -70,7 +78,14 @@
               <li>
                 <h4>美味书签 <a href="http://meiweisq.com">http://meiweisq.com</a></h4>
                 <div class="detail">
-                  参与
+                  做为主要开发人员（共3人），完后后端大部分工作（Clojure语言），前端部分工作，以及配置管理，自动测试，打包，自动部署。
+                  并想办法，使一名设计师可以非常快速的贡献CSS代码，一名前端可以方便的贡献HTML/JS代码。
+                </div>
+              </li>
+              <li>
+                <h4>美味集 <a href="http://meiwei.fm">http://meiwei.fm</a></h4>
+                <div class="detail">
+                  做为主要开发人员（共4人），继承于已有工作，完后后端部分工作（Python语言），前端部分工作。用JS写了一个较复杂的，支持拖拽的排版界面
                 </div>
               </li>
             </ul>
@@ -79,6 +94,14 @@
             <h3>昆山文石信息科技有限公司 <a href="http://onycloud.com">http://onycloud.com</a>
               <span class="date">2011/3-2011/9</span>
             </h3>
+            <ul>
+              <li>
+                <h4>Trakr <a href="https://trakrapp.com">http://trakrapp.com</a></h4>
+                <div class="detail">
+                  做为主要开发人员（共4人），完后后端部分工作（Clojure语言），前端部分工作。和同事一起，完成了JS单页面程序。
+                </div>
+              </li>
+            </ul>
           </li>
           <li>
             <h3>昆山文石信息科技有限公司 <a href="http://www.onyx-international.com.cn/">
@@ -87,7 +110,81 @@
               <span class="date">2010/9-2011/3</span>
             </h3>
           </li>
+        </ol>
+      </div>
+      <div class="section intern">
+        <h2>实习经历</h2>
+        <ul>
+          <li>Autodesk China R&D center
+            <span>职位：Test Developer</span>
+            <span>项目：http://seek.autodesk.com/</span>
+            <span class="date">2009.11--2010.5</span>
+          </li>
+          <li>北京拓尔思(TRS)信息技术股份有限公司
+            <span class="date">2008.11--2010.9</span></li>
         </ul>
+      </div>
+      <div class="section intern">
+        <h2>开源项目</h2>
+        <p class="info">工作之外的时间，我会写一些代码，来学习新技术，和玩。他们可以大部分在github找到：<a href="https://github.com/shenfeng">https://github.com/shenfeng</a></p>
+        <ol>
+          <li>
+            <h3>http-kit  <a href="http://http-kit.org">http://http-kit.org</a>
+            </h3>
+            <div class="detail">
+              这是用Java为Clojure写的HTTP server/client & Timer，支持WebSocket和HTTP长连，具有高性能，API简单且友好的特点。
+              它受到了不少社区的关注，已有developer参与贡献代码和文档，两度被顶上Hacker News首页，在 <a href="https://github.com/http-kit/http-kit">github</a> 上也得到300多个star
+              我曾写过多个HTTP server／client
+              <ul>
+                <li>
+                  tiny-web-server <a href="https://github.com/shenfeng/tiny-web-server">https://github.com/shenfeng/tiny-web-server</a>：C语言，pre-fork
+                </li>
+                <li>dictionary <a href="http://dict.shenfeng.me/">http://dict.shenfeng.me/</a>：C，epoll。2012年春节期间完成。有Android版本。
+                </li>
+                <li>
+                  async-http-client
+                  <a href="https://github.com/shenfeng/async-http-client">https://github.com/shenfeng/async-http-client</a>：
+                  在netty基础上封装的异步client，支持SOCKS，HTTP代理，支持HTTPS
+                </li>
+                <li>
+                  async-ring-adapter <a href="https://github.com/shenfeng/async-ring-adapter">https://github.com/shenfeng/async-ring-adapter</a>：
+                  Java & Clojure，在netty的基础上封装
+                </li>
+                <li>
+                  nio-httpserver
+                  <a href="https://github.com/shenfeng/nio-httpserver">https://github.com/shenfeng/nio-httpserver</a>：Java，学习Java NIO
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h3>Rssminer <a href="http://rssminer.net">http://rssminer.net</a></h3>
+            <div class="detail">
+              RSS reader, 有点像Google Reader，但功能弱一些。 GR关闭后，受到一些关注。从这个项目学了到很多东西。 完整的单元测试，使我可以较轻松的维护它。为它，写了一些较基础的库
+              <ul>
+                <li>
+                  <a href="https://github.com/http-kit/http-kit">http-kit</a>。需要一个异步server & client，所以有了它。
+                </li>
+                <li>
+                  模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API简单且够用，高性能（数倍于另外的实现）。做前端几年，对什么样的好，有一些体会。
+                </li>
+                <li>
+                  数据库连接池：<a href="https://github.com/http-kit/dbcp.clj">dbcp.clj</a>。采用Threadlocal，可比市面上其它的都快很多，和http-kit的线程模型配合很好。
+                </li>
+                <li>
+                  中文分词：<a href="https://github.com/shenfeng/mmseg">mmesg</a>。正向最大匹配。准确性够用，速度够快，内存占用够小。
+                </li>
+              </ul>
+              一个为Rssminer feed定制的存储后端在计划中，打算用Go语言完成，预计能节省200%左右的存储，并能提供更好的性能。
+            </div>
+          </li>
+          <li>
+            <h3>http-watcher <a href="https://github.com/shenfeng/http-watcher">https://github.com/shenfeng/http-watcher</a></h3>
+            <div class="detail">
+              2012年元旦在家写的。为前端人员开发的HTTP服务器，自动更新代码，零配置。go语言完成。支持本地文件模式和HTTP透明代理模式。
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </body>
