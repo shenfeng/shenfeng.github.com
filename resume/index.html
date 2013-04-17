@@ -150,6 +150,7 @@
               在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了近400个star。
               <p>IO/线程模型：单线程（事件循环线程）读socket，decode为request，线程池计算request=>response, encode response，尝试把response发给客户端，
                 如果没有发完（buffer满），则queue到事件循环线程，等待TCP write buffer被flush后再发。</p>
+              <p>相对于单线程，不能容忍同步IO的Node.js；多线程，worker线程和事件循环线程分开的http-kit，同步IO可以放心使用</p>
               <p>在它之前，曾实现过多次HTTP server／client：</p>
               <ol>
                 <li>
