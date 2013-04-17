@@ -67,19 +67,19 @@
           </tr>
           <tr>
             <td>求职目标</td>
-            <td>大公司：偏后台或偏底层的开发职位；小公司／Startup：各种杂活都行，一起干活，相信明天会更好</td>
+            <td>大公司：偏后台或偏底层的开发职位；小公司／Startup：无职位偏好，基本上什么都需要干</td>
           </tr>
         </table>
       </div>
       <div class="section work">
         <h2>工作经历</h2>
-        <p class="info">正式参加工作近3年来，在创业公司做事，公司名，工作城市（广州－江苏昆山－北京）换了又换，老大没变</p>
+        <p class="info">正式参加工作近3年来，一直在创业公司做事，公司名换了几次，工作城市（广州－江苏昆山－北京）换了几次</p>
         <ol>
           <li>
             <h3>AVOS China  <a href="http://team.mei.fm">http://team.mei.fm</a>
               <span class="date">2011/9 - 2013/4</span></h3>
             <p>AVOS 是 YouTube 创始人 Chad Hurley 和 Steve Chen（陈士骏）2011年6月份创立的互联网公司。在创新工厂的帮助下，我们（共4人）整体加入，做为在北京的分部。我主要参与的项目：</p>
-            <ul>
+            <ul class="projects">
               <li>
                 <h4>美味书签 <a href="http://meiweisq.com">http://meiweisq.com</a></h4>
                 <div class="detail">
@@ -100,7 +100,7 @@
             <h3>昆山文石信息科技有限公司 <a href="http://onycloud.com">http://onycloud.com</a>
               <span class="date">2011/3 - 2011/9</span>
             </h3>
-            <ul>
+            <ul class="projects">
               <li>
                 <h4>Trakr <a href="https://trakrapp.com">https://trakrapp.com</a></h4>
                 <div class="detail">
@@ -134,9 +134,9 @@
       </div>
       <div class="section intern">
         <h2>开源项目</h2>
-        <p class="info">工作之外的时间，也会写一些代码，Learning by doing，来学习新技术，和玩。
+        <p class="info">工作之外的时间，会写一些代码，Learning by doing，来学习新技术，验证一些想法，做一些自己还没做过的东西，玩。
           他们可以大部分在github找到：
-          <a href="https://github.com/shenfeng">https://github.com/shenfeng</a> 和 <a href="https://github.com/http-kit/">https://github.com/http-kit</a> 其中较受欢迎的几个：</p>
+          <a href="https://github.com/shenfeng">https://github.com/shenfeng</a> 和 <a href="https://github.com/http-kit/">https://github.com/http-kit</a>。其中较受欢迎的几个：</p>
         <ol>
           <li>
             <h3>http-kit  <a href="http://http-kit.org">http://http-kit.org</a>
@@ -147,11 +147,9 @@
               <a href="http://http-kit.org/600k-concurrent-connection-http-kit.html">高并发</a>（类Nginx的性能特点），
               <b><a href="http://http-kit.org/server.html">API简单且友好</a></b>。实现简单，3200来行代码。
               在Clojure社区，受到了一些关注，已有几个developer参与贡献代码和文档。曾2次被顶上Hacker News首页，
-              在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了400来个star。
+              在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了近400个star。
               <p>IO/线程模型：单线程（事件循环线程）读socket，decode为request，线程池计算request=>response, encode response，尝试把response发给客户端，
                 如果没有发完（buffer满），则queue到事件循环线程，等待TCP write buffer被flush后再发。</p>
-              <p>对app程序员来说，异步可能能换取执行性能，但更可能是得不偿失。相对于单线程，只能异步的Node，http-kit实现是异步的，并利用了多线程，暴露的API默认同步，异步可选，可能是需要高性能的另一个选择。
-                <span class="dim">client支持HTTPS正在开发当中。</span></p>
               <p>在它之前，曾实现过多次HTTP server／client：</p>
               <ol>
                 <li>
@@ -187,8 +185,7 @@
                   先在Netty的基础上封装过异步的client和server，后面觉得其实可以（也想试试）从零写，于是就写了它。后面受到一些关注后，就开始完善API，文档。
                 </li>
                 <li>
-                  模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API方便，简单够用，高性能（数倍于另外的实现）。
-                  做前端几年，对什么样的模板够用，有一些体会。Rssminer也用它实现了多语言支持。
+                  模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API方便，简单够用，高性能（数倍于另外的实现）。Rssminer也用它实现了多语言支持。
                 </li>
                 <li>
                   数据库连接池：<a href="https://github.com/http-kit/dbcp.clj">dbcp.clj</a>，采用Threadlocal，可能比市面上其它的快一些，和http-kit的线程模型配合很好，断开后会自动重连。
@@ -198,7 +195,7 @@
                 </li>
               </ul>
 
-              <p>一个为Rssminer feed定制的存储后端在计划中，打算用Go语言完成，预计能节省200%左右的存储，并能提供更好的性能。</p>
+              <p>一个为Rssminer feed定制的存储后端在计划中，打算用Go语言完成，预计能省 200% 左右的存储，节省RAM，并可能提供更好的性能。</p>
             </div>
           </li>
           <li>

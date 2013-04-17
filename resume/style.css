@@ -52,3 +52,8 @@ h3 a, h4 a {
 .dim {
     color: #666;
 }
+
+.projects {
+    list-style: none;
+    padding: 0;
+}
