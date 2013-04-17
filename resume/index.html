@@ -102,7 +102,7 @@
             </h3>
             <ul>
               <li>
-                <h4>Trakr <a href="https://trakrapp.com">http://trakrapp.com</a></h4>
+                <h4>Trakr <a href="https://trakrapp.com">https://trakrapp.com</a></h4>
                 <div class="detail">
                   一个单页面的Issue tracking工具。做为主要开发人员（共4人），完成后端部分工作（Clojure），前端部分工作（Javascript）。
                   它迫使我认真思考前端JS代码的组织，Rssminer由此诞生：想实践中学习前端单页面的代码组织方式。
@@ -148,7 +148,9 @@
               <b><a href="http://http-kit.org/server.html">API简单且友好</a></b>。实现简单，3200来行代码。
               在Clojure社区，受到了一些关注，已有几个developer参与贡献代码和文档。曾2次被顶上Hacker News首页，
               在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了400来个star。
-              <p>http-kit底层是异步的。对app程序员来说，异步可能能换取执行性能，但有可能得不偿失，默认同步，异步可选可能是另一个选择。
+              <p>IO/线程模型：单线程（事件循环线程）读socket，decode为request，线程池计算request=>response, encode response，尝试把response发给客户端，
+                如果没有发完（buffer满），则queue到事件循环线程，等待TCP write buffer被flush后再发。</p>
+              <p>对app程序员来说，异步可能能换取执行性能，但更可能是得不偿失。相对于单线程，只能异步的Node，http-kit实现是异步的，并利用了多线程，暴露的API默认同步，异步可选，可能是需要高性能的另一个选择。
                 <span class="dim">client支持HTTPS正在开发当中。</span></p>
               <p>在它之前，曾实现过多次HTTP server／client：</p>
               <ol>
@@ -181,17 +183,18 @@
               RSS reader, 有点像Google Reader，但功能弱一些。 GR关闭后，受到一些关注。从这个项目学了到很多东西。也试着做了实时的全文搜索，个性化推荐（由于GR关闭，来尝试的用户变多，计算资源有限，这两个功能被disable了）。完整的单元测试，使维护，加功能变得较轻松。为它，也试着写了一些较基础的库：
               <ul>
                 <li>
-                  <a href="https://github.com/http-kit/http-kit">http-kit</a>。需要一个支持异步server & client，所以有了它。
+                  <a href="https://github.com/http-kit/http-kit">http-kit</a>：需要一个支持异步server & client，
+                  先在Netty的基础上封装过异步的client和server，后面觉得其实可以（也想试试）从零写，于是就写了它。后面受到一些关注后，就开始完善API，文档。
                 </li>
                 <li>
                   模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API方便，简单够用，高性能（数倍于另外的实现）。
                   做前端几年，对什么样的模板够用，有一些体会。Rssminer也用它实现了多语言支持。
                 </li>
                 <li>
-                  数据库连接池：<a href="https://github.com/http-kit/dbcp.clj">dbcp.clj</a>。采用Threadlocal，可能比市面上其它的快一些，和http-kit的线程模型配合很好。
+                  数据库连接池：<a href="https://github.com/http-kit/dbcp.clj">dbcp.clj</a>，采用Threadlocal，可能比市面上其它的快一些，和http-kit的线程模型配合很好，断开后会自动重连。
                 </li>
                 <li>
-                  中文分词：<a href="https://github.com/shenfeng/mmseg">mmesg</a>。正向最大匹配。准确性够用，速度快，内存占用少。
+                  中文分词：<a href="https://github.com/shenfeng/mmseg">mmesg</a>，正向最大匹配，准确性够用，速度快，内存占用少。
                 </li>
               </ul>
 
