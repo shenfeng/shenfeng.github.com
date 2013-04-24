@@ -67,7 +67,7 @@
           </tr>
           <tr>
             <td>求职目标</td>
-            <td>大公司：偏后台或偏底层的开发职位；小公司／Startup：无职位偏好，基本上什么都需要干</td>
+            <td>大公司：偏后台或偏底层的开发职位；小公司／Startup：无职位偏好</td>
           </tr>
         </table>
       </div>
@@ -78,7 +78,8 @@
           <li>
             <h3>AVOS China  <a href="http://team.mei.fm">http://team.mei.fm</a>
               <span class="date">2011/9 - 2013/4</span></h3>
-            <p>AVOS 是 YouTube 创始人 Chad Hurley 和 Steve Chen（陈士骏）2011年6月份创立的互联网公司。在创新工厂的帮助下，我们（共4人）整体加入，做为在北京的分部。我主要参与的项目：</p>
+            <p>AVOS 是 YouTube 创始人 Chad Hurley 和 Steve
+              Chen（陈士骏）2011年6月份创立的互联网公司。在创新工厂的帮助下，我们（昆山文石的4个成员）整体加入，做为在北京的分部。我主要参与的项目：</p>
             <ul class="projects">
               <li>
                 <h4>美味书签 <a href="http://meiweisq.com">http://meiweisq.com</a></h4>
@@ -100,6 +101,7 @@
             <h3>昆山文石信息科技有限公司 <a href="http://onycloud.com">http://onycloud.com</a>
               <span class="date">2011/3 - 2011/9</span>
             </h3>
+            <p>昆山文石由广州文石的创始人在江苏昆山创办，专注于互联网。我主要参与的项目：</p>
             <ul class="projects">
               <li>
                 <h4>Trakr <a href="https://trakrapp.com">https://trakrapp.com</a></h4>
@@ -111,7 +113,7 @@
             </ul>
           </li>
           <li>
-            <h3>昆山文石信息科技有限公司 <a href="http://www.onyx-international.com.cn/">
+            <h3>广州文石信息科技有限公司 <a href="http://www.onyx-international.com.cn/">
                 http://www.onyx-international.com.cn/
               </a>
               <span class="date">2010/9-2011/3</span>
@@ -142,15 +144,16 @@
             <h3>http-kit  <a href="http://http-kit.org">http://http-kit.org</a>
             </h3>
             <div class="detail">
-              用Java为Clojure写的零依赖HTTP server/client & Timer，支持WebSocket和HTTP长连，
-              <a href="https://github.com/ptaoussanis/clojure-web-server-benchmarks">高性能</a>，
-              <a href="http://http-kit.org/600k-concurrent-connection-http-kit.html">高并发</a>（类Nginx的性能特点），
-              <b><a href="http://http-kit.org/server.html">API简单且友好</a></b>。实现简单，3200来行代码。
-              在Clojure社区，受到了一些关注，已有几个developer参与贡献代码和文档。曾2次被顶上Hacker News首页，
-              在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了近400个star。
-              <p>IO/线程模型：单线程（事件循环线程）读socket，decode为request，线程池计算request=>response, encode response，尝试把response发给客户端，
-                如果没有发完（buffer满），则queue到事件循环线程，等待TCP write buffer被flush后再发。</p>
-              <p>相对于单线程，不能容忍同步IO的Node.js；多线程，worker线程和事件循环线程分开的http-kit，同步IO可以放心使用</p>
+              <p>
+                用Java为Clojure写的零依赖，事件驱动，多线程的HTTP server/client。
+                在Clojure社区，受到了一些关注，已有几个developer参与贡献代码和文档。曾2次被顶上Hacker News首页，在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了近400个star。</p>
+              <ul>
+                <li>server: 支持WebSocket和HTTP长连(服务器推送)，<b><a href="http://http-kit.org/server.html">API简单且友好</a></b>，
+                  <a href="https://github.com/ptaoussanis/clojure-web-server-benchmarks">高性能</a>，
+                  <a href="http://http-kit.org/600k-concurrent-connection-http-kit.html">高并发<span class="dim">(维护数十万TCP连接)</span></a>
+                </li>
+                <li>client: 支持HTTP keepalive，HTTPS</li>
+              </ul>
               <p>在它之前，曾实现过多次HTTP server／client：</p>
               <ol>
                 <li>
@@ -158,9 +161,8 @@
                 </li>
                 <li>
                   <a href="http://dict.shenfeng.me/">dictionary <span class="dim">http://dict.shenfeng.me/</span></a>：C，epoll。
-                  纯c，零依赖的英英字典，2011年春节期间学epoll时完成。见识了epoll性能的强悍：
-                  <a href="http://shenfeng.me/how-far-epoll-can-push-concurrent-socket-connection.html">c1600k</a>。
-                  有离线Android版本。
+                  纯c，零依赖的英英字典，2011年春节期间学epoll时完成。见识了epoll性能的强悍：<a href="http://shenfeng.me/how-far-epoll-can-push-concurrent-socket-connection.html">c1600k</a>。
+                  另有Android的离线版本。
                 </li>
                 <li>
                   <a href="https://github.com/shenfeng/async-http-client">async-http-client</a>：
@@ -179,23 +181,22 @@
           <li>
             <h3>Rssminer <a href="http://rssminer.net">http://rssminer.net</a></h3>
             <div class="detail">
-              RSS reader, 有点像Google Reader，但功能弱一些。 GR关闭后，受到一些关注。从这个项目学了到很多东西。也试着做了实时的全文搜索，个性化推荐（由于GR关闭，来尝试的用户变多，计算资源有限，这两个功能被disable了）。完整的单元测试，使维护，加功能变得较轻松。为它，也试着写了一些较基础的库：
+              <p>在线RSS reader, 类似Google Reader，功能弱一些。 GR关闭后，受到一些关注。从这个项目学了到很多东西。也试着做了实时的全文搜索，个性化推荐（由于GR关闭，来尝试的用户变多，计算资源有限，这两个功能被disable了）。完整的单元测试，使维护，加功能变得较轻松。为它，也写了一些较基础的库：</p>
               <ul>
                 <li>
                   <a href="https://github.com/http-kit/http-kit">http-kit</a>：需要一个支持异步server & client，
-                  先在Netty的基础上封装过异步的client和server，后面觉得其实可以（也想试试）从零写，于是就写了它。后面受到一些关注后，就开始完善API，文档。
+                  先在Netty的基础上封装过异步的client和server，后面觉得可以（也想试试）从零写，于是就写了它。后面受到一些关注，逐步完善API，文档。
                 </li>
                 <li>
                   模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API方便，简单够用，高性能（数倍于另外的实现）。Rssminer也用它实现了多语言支持。
                 </li>
                 <li>
-                  数据库连接池：<a href="https://github.com/http-kit/dbcp.clj">dbcp.clj</a>，采用Threadlocal，可能比市面上其它的快一些，和http-kit的线程模型配合很好，断开后会自动重连。
+                  数据库连接池：<a href="https://github.com/http-kit/dbcp.clj">dbcp.clj</a>，采用Threadlocal，可能比市面上其它的快一些，和http-kit的线程模型配合很好，支持自动重连。
                 </li>
                 <li>
                   中文分词：<a href="https://github.com/shenfeng/mmseg">mmesg</a>，正向最大匹配，准确性够用，速度快，内存占用少。
                 </li>
               </ul>
-
               <p>一个为Rssminer feed定制的存储后端在计划中，打算用Go语言完成，预计能省 200% 左右的存储，节省RAM，并可能提供更好的性能。</p>
             </div>
           </li>

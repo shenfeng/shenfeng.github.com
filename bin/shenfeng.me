@@ -8,3 +8,14 @@ server {
                 expires 3h;
         }
 }
+
+
+server {
+        server_name dict.shenfeng.me;
+        location / {
+          proxy_pass  http://127.0.0.1:9090/;
+          # access_log off;
+          # proxy_set_header Host $http_host;
+          access_log  /var/log/nginx/dict.access.log;
+    }
+}

@@ -8,7 +8,8 @@ if which greadlink > /dev/null; then
     READLINK=greadlink
 fi
 
-BLOG_HOST="shenfeng.me"
+BLOG_HOST="71.19.154.89"
+# BLOG_HOST="71.19.147.230"
 ABSOLUTE_PATH=$(${READLINK} -f $0)
 BLOG_HOME="${ABSOLUTE_PATH%/*/*}"
 DEPLOYMENT_USER="deploy"
@@ -21,6 +22,8 @@ function remote_run {
 
 # Create the directory if this is the first deployment.
 remote_run "sudo mkdir -p ${TARGET_DIR} && sudo chown deploy ${TARGET_DIR}"
+
+# remote_run "chown deploy -R ${TARGET_DIR}"
 
 rsync --rsh='ssh' -vr --delete --delete-excluded \
     "${BLOG_HOME}/_site/" "${SSH_TARGET}:${TARGET_DIR}/"

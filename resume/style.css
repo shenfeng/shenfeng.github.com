@@ -17,6 +17,12 @@ sub {
     font-weight: bold;
 }
 
+.en #info td:first-child {
+    width: 150px;
+    font-weight: bold;
+}
+
+
 body {
     font-family: monospace;
     font-size: 14px;
@@ -56,4 +62,7 @@ h3 a, h4 a {
 .projects {
     list-style: none;
     padding: 0;
+}
+.skills {
+    padding-left: 20px;
 }
