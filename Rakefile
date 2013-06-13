@@ -27,12 +27,12 @@ end
 
 desc "Generate site"
 task :generate => :css do
-  sh "jekyll --no-auto"
+  sh "jekyll build"
 end
 
 desc "Watch for change"
 task :watch => :generate do
-  sh "http-watcher -ignores _site -command ./preprocess"
+  sh "http-watcher -ignores _site -command ./preprocess -port 9091"
 end
 
 desc "Compress html"
