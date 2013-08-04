@@ -28,7 +28,8 @@ end
 
 desc "Generate site"
 task :generate => :css do
-  sh "jekyll --no-server --no-auto"
+  # sh "jekyll --no-server --no-auto"
+  sh "jekyll build"
 end
 
 desc "Watch for change"

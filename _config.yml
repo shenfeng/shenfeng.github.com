@@ -1,4 +1,4 @@
-auto: true
+#auto: true
 permalink: /:title.html
 url: http://shenfeng.me
 pygments: tue

@@ -4,12 +4,10 @@ date: '2012-06-22 22-03-00'
 layout: post
 status: publish
 title: About Javascript dispatch event and delegate event
-categories:
-- javascript
+categories: ['javascript']
 ---
 
 {% highlight js %}
-
 (function () {
   var all_events = {};          // events data, private to this file
   function bind_event (ele, event, handler) {
@@ -75,5 +73,4 @@ categories:
     'click ul li': click_handler2
   });
 })();
-
 {% endhighlight %}
