@@ -2,6 +2,7 @@ require 'tempfile'
 require 'rubygems'
 require 'date'
 
+
 desc 'Deploy'
 task :deploy => [:clean, :compress] do
   sh "bin/deploy"
@@ -27,7 +28,7 @@ end
 
 desc "Generate site"
 task :generate => :css do
-  sh "jekyll build"
+  sh "jekyll --no-server --no-auto"
 end
 
 desc "Watch for change"
