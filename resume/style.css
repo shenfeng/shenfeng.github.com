@@ -66,3 +66,17 @@ h3 a, h4 a {
 .skills {
     padding-left: 20px;
 }
+
+.notice {
+    border-top: 1px solid #cecece;
+    padding-top: 10px;
+}
+
+.skills {
+    padding-left: 10px;
+}
+
+h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}

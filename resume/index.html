@@ -37,25 +37,26 @@
 
           <tr>
             <td>工作经验</td>
-            <td>2.75年（全职工作），4年（算上实习） </td>
+            <td>3年</td>
           </tr>
           <tr>
             <td>职业技能</td>
             <td>
-              <ul>
+              <ul class="skills">
                 <li>热爱生活，热爱编程，勤（补拙）奋的程序员，<a href="https://github.com/shenfeng?tab=repositories">practitioner</a></li>
                 <li>web开发一条龙：前端，服务端，存储，测试，自动部署，监控，优化等</li>
                 <!-- <li>熟练的前端工程师，对JS/HTML/CSS/有较好的理解，5年有余，感情深厚，经验丰富</li> -->
                 <li>熟悉HTTP协议，多次零依赖实现过HTTP sever和client</li>
-                <li>对网络编程有一些经验，实现过HTTP/WebSocket/FTP/DNS/SOCKS等协议（有些是部分）。对线程，线程安全，concurrency有一些体会</li>
-                <li>Java/Javascript/C/Clojure/Python/Go/Bash/HTML/CSS，
+                <li>对网络编程有一些经验，实现过HTTP/WebSocket/FTP/DNS/SOCKS等协议<!-- （有些是部分） -->。对线程，线程安全，concurrency有实践经验</li>
+                <li>擅长解决性能问题，对高性能，低延时的服务器程序优化有实战经验</li>
+                <li>C/C++/Go/Java/Clojure/Python/Javascript/Bash/HTML/CSS，
                   <a href="https://github.com/shenfeng/dotfiles">Linuxer</a>,
                   <a href="https://github.com/shenfeng/dotfiles/tree/master/emacs.d">Emacser</a>
               </ul>
             </td>
           </tr>
           <tr>
-            <td>Github</td>
+            <td>Github帐号</td>
             <td>
               <a href="https://github.com/shenfeng">shenfeng</a>
               <a href="https://github.com/http-kit">http-kit</a>
@@ -63,20 +64,49 @@
           </tr>
           <tr>
             <td>英语</td>
-            <td>读过不少文档，听Google IO，Tech talk，公开课（计算机，经济类），可以没有字幕</td>
+            <td>熟练阅读文档；无字幕听Google IO，Tech talk，公开课（计算机，经济类）；可做为工作语言。</td>
           </tr>
-          <tr>
-            <td>求职目标</td>
-            <td>大公司：偏后台或偏底层的开发职位；小公司／Startup：无职位偏好</td>
-          </tr>
+          <!-- <tr> -->
+          <!--   <td>求职目标</td> -->
+          <!--   <td>大公司：偏后台或偏底层的开发职位；小公司／Startup：无职位偏好</td> -->
+          <!-- </tr> -->
         </table>
       </div>
       <div class="section work">
         <h2>工作经历</h2>
-        <p class="info">正式参加工作近3年来，一直在创业公司做事，公司名换了几次，工作城市（广州－江苏昆山－北京）换了几次</p>
+        <!-- <p class="info">正式参加工作近3年来，一直在创业公司做事，公司名换了几次，工作城市（广州－江苏昆山－北京）换了几次</p> -->
         <ol>
           <li>
-            <h3>AVOS China  <a href="http://team.mei.fm">http://team.mei.fm</a>
+            <h3> 美团 <a href="http://meituan.com">http://meituan.com</a>
+              <span class="title">后台服务开发工程师</span>
+              <span class="date">2013/5 - 至今</span></h3>
+            <p>
+              加入美团，成长了很多。更大的平台，更大的发挥空间。负责支撑美团的后台（搜索，排序，推荐等）流量，以及负责个性化推荐算法。至今，我负责的项目有：
+              <ul class="projects">
+                <li>
+                  <h4>Thrift Proxy</h4>
+                  <div class="detail">在TCP上实现的Thrift代理（类似于HTTP proxy对于HTTP协议），支持负载均衡，容错，cache结果。
+                    解决长时间困扰的服务稳定性问题，把服务稳定性带到4个9，同事们可以少收些报警邮件和短信，安心睡觉。提供HTTP界面，dump一些性能counter供监控。</div>
+                </li>
+                <li>
+                  <h4>Thrift Router</h4>
+                  <div class="detail">支撑美团网站的后台流量。相对于router根据IP头分发IP包，Thrift Router根据内容分发Thrift请求，并负载均衡，容错，在线修改配置文件。</div>
+                </li>
+                <li>
+                  <h4>推荐（个性化）服务</h4>
+                  <div class="detail">
+                    千人前面。采集用户的实时行为，根据历史行为，实时推荐。
+                  </div>
+                </li>
+                <li>
+                  <h4>监控，日志解析，CTR等性能数据</h4>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <h3>AVOS China   <a href="http://team.mei.fm">http://team.mei.fm</a>
+              <span class="title">开发工程师</span>
               <span class="date">2011/9 - 2013/4</span></h3>
             <p>AVOS 是 YouTube 创始人 Chad Hurley 和 Steve
               Chen（陈士骏）2011年6月份创立的互联网公司。在创新工厂的帮助下，我们（昆山文石的4个成员）整体加入，做为在北京的分部。我主要参与的项目：</p>
@@ -96,29 +126,32 @@
                 </div>
               </li>
             </ul>
-          </li>
-          <li>
-            <h3>昆山文石信息科技有限公司 <a href="http://onycloud.com">http://onycloud.com</a>
-              <span class="date">2011/3 - 2011/9</span>
-            </h3>
-            <p>昆山文石由广州文石的创始人在江苏昆山创办，专注于互联网。我主要参与的项目：</p>
-            <ul class="projects">
+            <p class="notice">在加入AVOS之前，在文石公司工作过。后来，昆山文石加入创新工场，并入陈士骏创办的AVOS。</p>
+            <ul>
               <li>
-                <h4>Trakr <a href="https://trakrapp.com">https://trakrapp.com</a></h4>
-                <div class="detail">
-                  一个单页面的Issue tracking工具。做为主要开发人员（共4人），完成后端部分工作（Clojure），前端部分工作（Javascript）。
-                  它迫使我认真思考前端JS代码的组织，Rssminer由此诞生：想实践中学习前端单页面的代码组织方式。
-                </div>
+                <h4>昆山文石信息科技有限公司 <a href="http://onycloud.com">http://onycloud.com</a>
+                  <span class="date">2011/3 - 2011/9</span>
+                </h4>
+                <p>昆山文石由广州文石的创始人在江苏昆山创办，专注于互联网。我主要参与的项目：</p>
+                <ul class="projects">
+                  <li>
+                    <h4>Trakr <a href="https://trakrapp.com">https://trakrapp.com</a></h4>
+                    <div class="detail">
+                      一个单页面的Issue tracking工具。做为主要开发人员（共4人），完成后端部分工作（Clojure），前端部分工作（Javascript）。
+                      它迫使我认真思考前端JS代码的组织，Rssminer由此诞生：想实践中学习前端单页面的代码组织方式。
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h4>广州文石信息科技有限公司 <a href="http://www.onyx-international.com.cn/">
+                    http://www.onyx-international.com.cn/
+                  </a>
+                  <span class="date">2010/9-2011/3</span>
+                </h4>
+                <p>在这里主要完成了文件同步工具（类似dropbox）的Android客户端的开发，和Onyx的网上书城 <a href="http://onybooks.com/">http://onybooks.com/</a>的开发</p>
               </li>
             </ul>
-          </li>
-          <li>
-            <h3>广州文石信息科技有限公司 <a href="http://www.onyx-international.com.cn/">
-                http://www.onyx-international.com.cn/
-              </a>
-              <span class="date">2010/9-2011/3</span>
-            </h3>
-            <p>在这里主要完成了文件同步工具（类似dropbox）的Android客户端的开发，和Onyx的网上书城 <a href="http://onybooks.com/">http://onybooks.com/</a>的开发</p>
           </li>
         </ol>
       </div>
@@ -130,14 +163,12 @@
             <span>项目：http://seek.autodesk.com/</span>
             <span class="date">2009.11--2010.2</span>
           </li>
-          <li>北京拓尔思(TRS)信息技术股份有限公司
-            <span class="date">2008.11--2010.9</span></li>
+          <li>北京拓尔思(TRS)信息技术股份有限公司 <span class="date">2008.11--2010.9</span></li>
         </ul>
       </div>
       <div class="section intern">
         <h2>开源项目</h2>
-        <p class="info">工作之外的时间，会写一些代码，Learning by doing，来学习新技术，验证一些想法，做一些自己还没做过的东西，玩。
-          他们可以大部分在github找到：
+        <p class="info">工作之外的时间，会写一些代码，Learning by doing，来学习新技术，验证一些想法，做一些自己还没做过的东西。 他们可以大部分在github找到：
           <a href="https://github.com/shenfeng">https://github.com/shenfeng</a> 和 <a href="https://github.com/http-kit/">https://github.com/http-kit</a>。其中较受欢迎的几个：</p>
         <ol>
           <li>
@@ -146,7 +177,7 @@
             <div class="detail">
               <p>
                 用Java为Clojure写的零依赖，事件驱动，多线程的HTTP server/client。
-                在Clojure社区，受到了一些关注，已有几个developer参与贡献代码和文档。曾2次被顶上Hacker News首页，在<a href="https://github.com/http-kit/http-kit">github</a>上也收获了近400个star。</p>
+                在Clojure社区，受到了一些关注，收到 <a href="https://github.com/http-kit/http-kit/graphs/contributors">十几个社区朋友</a> 的patch，多封邮件感谢。曾2次被顶上Hacker News首页，在<a href="https://github.com/http-kit/http-kit">github</a>上也收到了500多个star。</p>
               <ul>
                 <li>server: 支持WebSocket和HTTP长连(服务器推送)，<b><a href="http://http-kit.org/server.html">API简单且友好</a></b>，
                   <a href="https://github.com/ptaoussanis/clojure-web-server-benchmarks">高性能</a>，
@@ -157,35 +188,36 @@
               <p>在它之前，曾实现过多次HTTP server／client：</p>
               <ol>
                 <li>
-                  <a href="https://github.com/shenfeng/tiny-web-server">tiny-web-server</a>：C语言，pre-fork
+                  <a href="https://github.com/shenfeng/tiny-web-server">Tiny-web-server</a>：C语言，pre-fork
                 </li>
                 <li>
-                  <a href="http://dict.shenfeng.me/">dictionary <span class="dim">http://dict.shenfeng.me/</span></a>：C，epoll。
-                  纯c，零依赖的英英字典，2011年春节期间学epoll时完成。见识了epoll性能的强悍：<a href="http://shenfeng.me/how-far-epoll-can-push-concurrent-socket-connection.html">c1600k</a>。
-                  另有Android的离线版本。
+                  <a href="https://github.com/shenfeng/dictionary">Engish-English Dictionary <span class="dim">github/shenfeng/dictionary</span></a>C，epoll。
+                  纯c，零依赖的英英字典，2011年春节期间学epoll时完成，在16G机器上，可稳定1600K并发：<a href="http://shenfeng.me/how-far-epoll-can-push-concurrent-socket-connection.html">c1600k</a>。
                 </li>
                 <li>
-                  <a href="https://github.com/shenfeng/async-http-client">async-http-client</a>：
+                  <a href="https://github.com/shenfeng/async-http-client">Async-http-client</a>：
                   在Netty基础上封装的异步client，支持SOCKS，HTTP代理，支持HTTPS
                 </li>
                 <li>
-                  <a href="https://github.com/shenfeng/async-ring-adapter">async-ring-adapter</a>：
+                  <a href="https://github.com/shenfeng/async-ring-adapter">Async-ring-adapter</a>：
                   Java & Clojure，在Netty的基础上封装的server，暴露异步的API。
                 </li>
                 <li>
-                  <a href="https://github.com/shenfeng/nio-httpserver">nio-httpserver</a>：学习Java NIO时写的
+                  <a href="https://github.com/shenfeng/nio-httpserver">Nio-httpserver</a>：学习Java NIO时写的
                 </li>
               </ol>
             </div>
           </li>
           <li>
-            <h3>Rssminer <a href="http://rssminer.net">http://rssminer.net</a></h3>
+            <h3>Rssminer
+              <a href="http://rssminer.net">http://rssminer.net</a><span class="date">（已下线）</span></h3>
             <div class="detail">
-              <p>在线RSS reader, 类似Google Reader，功能弱一些。 GR关闭后，受到一些关注。从这个项目学了到很多东西。也试着做了实时的全文搜索，个性化推荐（由于GR关闭，来尝试的用户变多，计算资源有限，这两个功能被disable了）。完整的单元测试，使维护，加功能变得较轻松。为它，也写了一些较基础的库：</p>
+              <p>在线RSS reader, 类似Google Reader。 GR关闭后，受到一些关注，大量用户涌入，导入他们在GR的收藏，每天抓取几百万文章，硬盘容量受到压力，后面关掉了服务。
+                从这个项目学了到很多东西：我做了实时的全文搜索，个性化推荐。完整的单元测试，使维护，加功能变得较轻松。因为它，也写了一些较基础的库：</p>
               <ul>
                 <li>
-                  <a href="https://github.com/http-kit/http-kit">http-kit</a>：需要一个支持异步server & client，
-                  先在Netty的基础上封装过异步的client和server，后面觉得可以（也想试试）从零写，于是就写了它。后面受到一些关注，逐步完善API，文档。
+                  <a href="https://github.com/http-kit/http-kit">http-kit</a>：我需要一个支持异步server & client，来scale抓取的推送。
+                  先在Netty的基础上封装异步的client和server，后面用JAVA零依赖实现一个。后面受到一些关注，逐步完善API，文档。
                 </li>
                 <li>
                   模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API方便，简单够用，高性能（数倍于另外的实现）。Rssminer也用它实现了多语言支持。
