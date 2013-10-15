@@ -1,0 +1,47 @@
+/*work hard*/
+
+h1{
+    text-align: center;
+}
+
+#page-wrap {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#profile {
+    float: right;
+    width: 130px;
+    height:160px;
+}
+
+#self-info td:first-child {
+    width: 100px;
+    font-weight: bold;
+    vertical-align: text-top;
+}
+
+/*#self-info table{*/
+    /*border: 10px;*/
+/*}*/
+
+body{
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.date{
+    font-size: 12px;
+    font-weight: normal;
+    color: #777;
+}
+
+h3 a,h4 a{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#the-first-job td{
+    vertical-align: bottom;
+}
