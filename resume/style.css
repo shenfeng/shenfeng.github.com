@@ -1,6 +1,6 @@
 #page-wrap {
     width: 900px;
-    margin: 0 auto;
+    margin: 10px auto 120px auto;
 }
 
 a {
@@ -57,6 +57,10 @@ h3 a, h4 a {
 
 .dim {
     color: #666;
+}
+
+.projects h4 {
+    margin: 10px 0;
 }
 
 .projects {
