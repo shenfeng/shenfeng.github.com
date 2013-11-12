@@ -20,16 +20,20 @@ T6
 不做特殊处理，线程池不能保证T1-T6的执行顺序，有可能它们是并发的。但有特殊要求，比如需要T2和T5需要顺序执行，应该怎么实现呢？
 
 问题来源于，在写[http-kit](http://http-kit.org)的时候，我对它加入了WebSocket协议的支持。
-处理WebSocket时，由于一个client可能发多个message给服务器，服务器应该需要保证它们的时序：先到现被处理，后到的要等待前面的被处理后才能被处理。
+处理WebSocket时，由于一个client可能发多个message给服务器，服务器应该需要保证它们的时序：先到先被处理，后到的要等待前面的被处理后才能被处理。
 
 http-kit的线程模型是一个异步的IO线程，负责接受客户端的连接，读取并解析协议为request，扔到一个线程池，由它们计算response，然后IO线程负责把response写到客户端的TCP socket buffer。
-http-kit需要处理HTTP和WebSocket协议，HTTP协议是单一的request => response，没有顺序问题。
+http-kit需要处理HTTP和WebSocket协议，HTTP协议是单一的request =>
+response，不实现Pipeline则没有这个问题（http-kit选择不实现HTTP的pipeline）。
 
 问题变为：**如何高效实现线程池中部分task有序执行**
 
-简单并高效的代码总是很招人喜欢，我甚至愿意用一点点效率来换取简单。http-kit用3000来行代码，从零高效实现HTTP server，支持基于HTTP长连服务器推送和Websocket，异步的HTTP client，Timer，并用Clojure暴露一个漂亮的API。实际经验告诉我，简单可能会换来性能，比如http-kit具有和Nginx相似的性能特点，[这里](https://github.com/ptaoussanis/clojure-web-server-benchmarks)有一南非朋友做的测试，我还很无聊的做过一个[C600K的试验](http://shenfeng.me/600k-concurrent-connection-http-kit.html)
+简单并高效的代码总是很招人喜欢，我甚至愿意用一点点效率来换取简单。http-kit用3000来行代码，从零高效实现HTTP
+server，支持HTTP长连推送和Websocket，异步的HTTP
+client，Timer，以及漂亮的API。实际经验告诉我，简单也会换来性能，比如http-kit具有和Nginx相似的性能特点，[这里](https://github.com/ptaoussanis/clojure-web-server-benchmarks)有一南非朋友做的测试，这里有一个[C600K的试验](http://shenfeng.me/600k-concurrent-connection-http-kit.html)，被推上了Hacker
+News的首页首行。
 
-最先的考虑是需要在线程池上做文章，于是就试着去实现一个特殊的线程池：多个线程，共享一个全局queue，每个还有一个单独的queue，通过单独的queue保证顺序。因为2个queue，需要解决Task被饿死的情况。
+最先的考虑是需要在线程池上做文章。试着去实现一个特殊的线程池：多个线程，共享一个全局queue，每个还有一个单独的queue，通过单独的queue保证顺序。因为2个queue，需要解决Task被饿死的情况。
 试着写了[几个实现](https://github.com/http-kit/http-kit/tree/protocol-api/test/java/org/httpkit/server)，总觉不太对，感觉自己能力有限，试着发了封邮件到Concurrency-interest@cs.oswego.edu，那里面有很多这方面的专家，比如大名鼎鼎的j.u.c的作者Doug Lea，希望能得到点指点。第二天，有几个人给了回复，其中Jeff Hain的回复让我茅塞顿开：
 
 
@@ -93,4 +97,4 @@ if (old == null) { // No previous job
 
 更详细的代码，以及上下文，请参看[RingHandler.java](https://github.com/http-kit/http-kit/blob/protocol-api/src/java/org/httpkit/server/RingHandler.java)
 
-简单高效的实现了局部有序，非常喜欢，符合我对好代码的要求：简单，API友好，高效
+简单高效的实现了局部有序，非常喜欢，符合我对好代码的要求：简单，高效
