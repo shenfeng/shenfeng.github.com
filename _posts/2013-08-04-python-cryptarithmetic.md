@@ -3,7 +3,7 @@ author: feng
 date: '2013-08-04 08-21-00'
 layout: post
 status: publish
-title: 算式迷 cryptarithmetic 的python解法
+title: python求解算式迷cryptarithmetic
 ---
 
 这周末两天都在听 Peter Norvig 在udacity的公开课《Design of Computer Programs》，[https://www.udacity.com/course/cs212](https://www.udacity.com/course/cs212)，很有意思，很受启发。Peter Norvig一把年纪了（1956年生，今年56岁了），很有激情，非常佩服

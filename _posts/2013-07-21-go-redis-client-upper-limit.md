@@ -3,7 +3,7 @@ author: feng
 date: '2013-7-21 08-21-00'
 layout: post
 status: publish
-title: 设计和实现一个高性能的redis go client 之 实际性能上限
+title: 设计和实现一个高性能的redis go client之实际性能上限
 categories: ['performance', 'redis']
 ---
 

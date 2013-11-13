@@ -3,7 +3,7 @@ author: feng
 date: '2013-1-22 22-21-00'
 layout: post
 status: publish
-title: http-watcher，用go为前端同学写的web服务器
+title: 介绍http-watcher，一前端利器
 categories: ['go', 'tool']
 ---
 
