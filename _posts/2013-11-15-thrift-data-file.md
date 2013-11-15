@@ -48,7 +48,8 @@ thrift -gen cpp data.thrift
 
 {% highlight python %}
 def dump_deals():
-    deals = DealsTiny() # TODO 从db load数据
+    deals = DealsTiny() 
+    # 从db load数据
 
     # 用Thrift dump deals为bytes
     itransport = TTransport.TMemoryBuffer()
@@ -56,7 +57,7 @@ def dump_deals():
     ipro = prof.getProtocol(itransport)
     deals.write(ipro)
 
-    # 写文件
+    # 写入文件
     buf = itransport.getvalue()
     with open("deals_info.bin", 'w') as f:
         f.write(buf)
@@ -86,6 +87,7 @@ int load_deals(std::string file, DealsTiny &deals) {
     shared_ptr<TTransport> itransport(new TMemoryBuffer(buffer, size));
     TBinaryProtocol ipro(itransport);
     deals.read(&ipro);
+
     munmap(buffer, size);
     return 1;
 }
