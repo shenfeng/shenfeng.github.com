@@ -149,7 +149,7 @@ func (m *DealMap) Put(d DealTiny) {
             m.table[bucknum] = d
             return
         }
-        num_probes += 1
+        num_probes += 1 // Open addressing with Linear probing 
         bucknum = (bucknum + num_probes) & bucket_count_minus_one
     }
 }
