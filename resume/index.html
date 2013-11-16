@@ -93,10 +93,10 @@
                 <li>
                   <h4>Thrift Router (Go)</h4>
                   <div
-                      class="detail">提出并开发的，推荐的多模型分流量测试系统。以类似proxy的工作方式。由于通用和方便，其它服务（排序，搜索，EDM等）陆续接入，现已接管了主站的全部后台流量，以及全部搜索流量。主要特点：
+                      class="detail">独立提出并开发的推荐的多模型分流量测试系统。由于通用和方便，其它服务（排序，搜索，EDM等）陆续接入，现已接管了主站的全部后台流量，以及全部搜索流量。主要特点：
                       <ol>
                           <li>高性能，高并发，低overhead（仅给请求链带来0.5ms～1ms的latency增加），无状态（扩展容易）</li>
-                          <li>流量分发方式灵活，用于AB测试，或者剥离特定流量单独优化等。例如支持把北京的Deal详情页底部的推荐流量中的美食类推荐的30%发给一组服务器，70%发给另外一组。提供配置修改界面，修改后，无需重启，即刻生效</li>
+                          <li>流量分发方式灵活，可用于AB测试，或者剥离特定流量单独优化等。例如支持把北京的Deal详情页底部的推荐流量中的美食类推荐的30%发给一组服务器，70%发给另外一组。提供配置修改界面，修改后，无需重启，即刻生效</li>
                           <li>对后面的服务负载均衡，对每组服务器，挑正在处理的请求数最少的服务转发；出错重试</li>
                           <li>Request改写：对每个请求，补上对应用户的最近实时行为（浏览，购买，搜索，下单，支付，消费等)后，再发给后台服务，方便后台服务依照用户的行为，对其进行个性化优化</li>
                           <li>Response改写：如对于推荐流量，按照策略综合多个服务的结果。对于首页排序，在默认排序的结果中，插入对于用户的推荐</li>
@@ -107,10 +107,14 @@
                 <li>
                   <h4>推荐（个性化）服务 (C++, Python)</h4>
                   <div class="detail">
-                     在美团的数据集上，实现了基于用户的collaborative
-                      filtering：在线计算相似用户（美团的数据特点使得在线计算可行），推荐结果随着用户行为的变化而实时变化。20ms左右，算出结果。
-                      <p>支撑美团首页的对用户的推荐，和部分Deal详情页对Deal的推荐流量。并做了一些配套程序，如实时解析日志得到CTR，流量，点击等数据并可视化（监控）；debug工具（推荐结果是怎么出来的）；实时用户行为收集并存储（数据收集）Router（AB测试系统）。</p>
-                      <p>用做工程的思维做算法：整体考虑，做实验，找瓶颈，抓大放小，拒绝主观猜测，数据驱动。</p>
+                     在美团的数据集上，设计并实现的基于用户的collaborative filtering。主要特点：
+                      <ol>
+                          <li>Python离线数据准备，生成bianry数据文件（用户行为向量，Deal详细信息等），C++加载数据，在线服务(Thrift)</li>
+                          <li>在线计算推荐结果（充分利用美团数据的特点，通过精心的数据组织以及code优化，20ms左右响应推荐请求），推荐结果随用户行为（实时收集）的变化而变化</li>
+                          <li>多核心&多机水平扩展。4s左右完成1.2亿条(用户，行为)对，几十万Deal的详细信息的加载。运行内存2G左右。</li>
+                          <li>支撑美团首页的对用户的个性化Deal排序流量，和部分Deal详情页对Deal的推荐流量</li>
+                          <li>用做工程的思维做算法：整体考虑，数据驱动，拒绝主观猜测，做实验，找瓶颈，抓大放小。完善配套程序：1. debug工具（推荐结果是怎么出来的）2. 实时解析日志得到CTR，流量，点击等数据并可视化（监控）3. 实时用户行为收集并存储（数据收集）4. Router（AB测试系统）</li>
+                    </ol>
                   </div>
                 </li>
               </ul>
@@ -126,8 +130,7 @@
               <li>
                 <h4>美味书签 <a href="http://meiweisq.com">http://meiweisq.com</a></h4>
                 <div class="detail">
-                  做为主要开发人员（共3～5人），完成后端大部分工作（Clojure语言），Android客户端（HTML5＋native），以及部署。
-                  协助设计师，使他可以非常容易的贡献CSS代码，协助另一名前端可以方便的贡献HTML/JS代码。
+                  做为主要开发人员（共3～5人），完成后端大部分工作（Clojure语言），前端部分工作，Android客户端（HTML5＋native），部署。 协助设计师，使他可以非常容易的贡献CSS代码。
                 </div>
               </li>
               <li>
@@ -189,7 +192,9 @@
             <div class="detail">
               <p>
                 用Java为Clojure写的零依赖，事件驱动，多线程的HTTP server/client。
-                在Clojure社区，受到了一些关注，收到 <a href="https://github.com/http-kit/http-kit/graphs/contributors">十几个社区朋友</a> 的patch，多封邮件感谢。曾2次被顶上Hacker News首页，在<a href="https://github.com/http-kit/http-kit">github</a>上也收到了600多个star。</p>
+                在Clojure社区，受到了一些关注，收到 <a href="https://github.com/http-kit/http-kit/graphs/contributors">十几个社区朋友</a> 的patch，多封邮件感谢。2次被顶上Hacker News首页，在<a href="https://github.com/http-kit/http-kit">github</a>上也收到了600多个star。
+                这个项目有完善的单元测试，使得维护较轻松。
+                </p>
               <ul>
                 <li>server: 支持WebSocket和HTTP长连(服务器推送)，<b><a href="http://http-kit.org/server.html">API简单且友好</a></b>，
                   <a href="https://github.com/ptaoussanis/clojure-web-server-benchmarks">高性能</a>，
@@ -231,7 +236,7 @@
                 <li>
                   <a href="https://github.com/http-kit/http-kit">http-kit</a>：需要一个支持异步server &
                   client，来scale抓取和推送。
-                  先在Netty的基础上封装异步的client和server，后面用JAVA零依赖实现一个。后面受到一些关注，逐步完善API，文档。
+                  先在Netty的基础上封装异步的client和server，后面用JAVA零依赖实现http-kit。受到一些关注，逐步完善API，文档。
                 </li>
                 <li>
                   模板引擎：<a href="https://github.com/shenfeng/mustache.clj">mustache.clj</a>：API方便，简单够用，高性能（数倍于另外的实现）。Rssminer也用它实现了多语言支持。
@@ -243,7 +248,6 @@
                   中文分词：<a href="https://github.com/shenfeng/mmseg">mmesg</a>，正向最大匹配，准确性够用，速度快，内存占用少。
                 </li>
               </ul>
-              <p>一个为Rssminer feed定制的存储后端在计划中，打算用Go语言完成，预计能省 200% 左右的存储，节省RAM，并可能提供更好的性能。</p>
             </div>
           </li>
           <li>

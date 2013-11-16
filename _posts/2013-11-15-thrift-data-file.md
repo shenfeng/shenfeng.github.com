@@ -6,7 +6,7 @@ status: publish
 title: Apache Thrift的一另类用法 - dump/load数据文件
 ---
 
-[Thrift](http://thrift.apache.org/)
+[Apache Thrift](http://thrift.apache.org/)
 一般被用做跨语言的服务的开发。它在这方面很好用，高效且方便，我现在服务的美团大量的使用了它。
 
 最近在做Deal的推荐系统，需要加载Deal的详细信息到内存。修改代码到程序跑起来的时间长短影响着开发效率，当然是越快越好，不希望每次修改代码后，编译，重启都需要去向数据库要一遍所有Deal的信息，毕竟C++的编译已经很耗时(*这是我喜欢go的一个原因，它编译迅速。但go对需要加载几百万用户的上亿行为到内存，20ms左右算出推荐结果的场景有些力不从心*)。一个可行的办法是把Deal信息dump到本地文件，重启时，快速的load这个文件。
