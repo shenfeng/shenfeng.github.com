@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>沈锋简历</title>
+    <title>沈锋个人简历</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -21,7 +21,7 @@
             <td>联系方式</td>
             <td>
               <span>邮件：shenedu@gmail.com</span>
-              <span>电话：18662356437</span>
+              <span>电话：(+86)18662356437</span>
             </td>
           </tr>
           <tr>
@@ -44,15 +44,13 @@
             <td>
               <ul class="skills">
                 <li>热爱生活，热爱编程，勤（补拙）奋的程序员，<a href="https://github.com/shenfeng?tab=repositories">practitioner</a></li>
-                <li>全端工程师：前端，服务端，存储，测试，部署，监控，优化等</li>
+                <!--<li>全端工程师：前端，服务端，存储，测试，部署，监控，优化等</li> -->
                 <!-- <li>熟练的前端工程师，对JS/HTML/CSS/有较好的理解，5年有余，感情深厚，经验丰富</li> -->
-                <li>熟悉HTTP协议，多次零依赖实现过HTTP sever和client</li>
-                <li>对网络编程有一些经验，实现过HTTP/WebSocket/FTP/DNS/SOCKS等协议<!-- （有些是部分）
-                -->。对线程，线程安全，concurrency有实践体会</li>
-                <li>擅长解决性能问题，对高性能，低延时的服务器程序优化有一些体会</li>
-                <li>用合适的语言，合适的解决问题：C/C++/Go/Java/Clojure/Python/Javascript/Bash/HTML/CSS，
-                  <a href="https://github.com/shenfeng/dotfiles">Linuxer</a>,
-                  <a href="https://github.com/shenfeng/dotfiles/tree/master/emacs.d">Emacser</a>
+                <li>熟悉web，熟悉HTTP协议，多次零依赖实现过HTTP sever和client</li>
+                <li>对网络编程有一些经验<!-- （有些是部分） --></li>
+                <li>擅长解决性能问题，对高性能，低延时的服务器程序设计，优化有实践经验</li>
+                <li>用合适的语言，合适的解决问题：C++/Go/Java/Clojure/Python/Javascript</li>
+                <li><a href="https://github.com/shenfeng/dotfiles">Linuxer</a>, <a href="https://github.com/shenfeng/dotfiles/tree/master/emacs.d">Emacser</a> </li>
               </ul>
             </td>
           </tr>
@@ -65,7 +63,7 @@
           </tr>
           <tr>
             <td>英语</td>
-            <td>熟练阅读文档；无字幕听Google IO，Tech talk，公开课（计算机，经济类）；可做为工作语言。</td>
+            <td>熟练阅读文档；无字幕听Google IO，公开课（计算机，经济类）；可做为工作语言。</td>
           </tr>
           <!-- <tr> -->
           <!--   <td>求职目标</td> -->
@@ -93,26 +91,25 @@
                 <li>
                   <h4>Thrift Router (Go)</h4>
                   <div
-                      class="detail">独立提出并开发的推荐的多模型分流量测试系统。由于通用和方便，其它服务（排序，搜索，EDM等）陆续接入，现已接管了主站的全部后台流量，以及全部搜索流量。主要特点：
+                      class="detail">提出并开发的推荐的多模型分流量测试系统。由于通用和方便，其它服务（排序，搜索，EDM等）陆续接入，现已接管了主站的全部后台流量，以及全部搜索流量。主要特点：
                       <ol>
-                          <li>高性能，高并发，低overhead（仅给请求链带来0.5ms～1ms的latency增加），无状态（扩展容易）</li>
-                          <li>流量分发方式灵活，可用于AB测试，或者剥离特定流量单独优化等。例如支持把北京的Deal详情页底部的推荐流量中的美食类推荐的30%发给一组服务器，70%发给另外一组。提供配置修改界面，修改后，无需重启，即刻生效</li>
-                          <li>对后面的服务负载均衡，对每组服务器，挑正在处理的请求数最少的服务转发；出错重试</li>
-                          <li>Request改写：对每个请求，补上对应用户的最近实时行为（浏览，购买，搜索，下单，支付，消费等)后，再发给后台服务，方便后台服务依照用户的行为，对其进行个性化优化</li>
-                          <li>Response改写：如对于推荐流量，按照策略综合多个服务的结果。对于首页排序，在默认排序的结果中，插入对于用户的推荐</li>
-                          <li>支持Copy指定的线上实际流量到指定的服务器，方便日常开发，debug，预上线等</li>
-                          <li>HTTP监控页面显示各个后台服务的状态；按分发条件统计请求数，QPS，超时数，响应时间，错误率等</li>
+                          <li>高性能，高并发，低overhead（仅给请求链带来0.5ms～1ms的latency增加）流量分发</li>
+                          <li>流量分发方式灵活，用于AB测试，或者剥离特定流量单独优化等。例如支持把北京的推荐流量中的30%发给一组服务器，70%发给另外一组。提供web配置管理界面</li>
+                         <!-- <li>对后面的服务负载均衡，对每组服务器，挑正在处理的请求数最少的服务转发；出错重试</li> -->
+                          <li>Request改写：对每个请求，补上对应用户的最近实时行为（浏览，购买，搜索，下单，支付，消费等)后，再发给后台服务，方便后台服务根据用户的行为，对其进行个性化优化</li>
+                          <li>Response改写：对于推荐流量，按照策略综合多个服务的结果。对于首页排序，在默认排序结果中，插入对于用户的推荐</li>
+                          <li>支持Copy指定的线上流量到指定的服务器，辅助日常开发，debug，预上线等</li>
+                          <li>HTTP监控页面：显示各个后台服务的状态，QPS，超时数，响应时间，错误率等</li>
                       </ol>
                 </li>
                 <li>
                   <h4>推荐（个性化）服务 (C++, Python)</h4>
                   <div class="detail">
-                     在美团的数据集上，设计并实现的基于用户的collaborative filtering。主要特点：
+                     实时推荐系统：让用户发现更多有意思的团购
                       <ol>
-                          <li>Python离线数据准备，生成bianry数据文件（用户行为向量，Deal详细信息等），C++加载数据，在线服务(Thrift)</li>
-                          <li>在线计算推荐结果（充分利用美团数据的特点，通过精心的数据组织以及code优化，20ms左右响应推荐请求），推荐结果随用户行为（实时收集）的变化而变化</li>
-                          <li>多核心&多机水平扩展。4s左右完成1.2亿条(用户，行为)对，几十万Deal的详细信息的加载。运行内存2G左右。</li>
-                          <li>支撑美团首页的对用户的个性化Deal排序流量，和部分Deal详情页对Deal的推荐流量</li>
+                          <li>实时计算：实时收集用户行为，推荐结果随着用户行为变化而变化</li>
+                          <li>大数据量：对7百万用户的1.3亿行为进行挖掘，生成推荐结果</li>
+                          <li>效率高：20ms左右完成对一个用户的推荐结果计算</li>
                           <li>用做工程的思维做算法：整体考虑，数据驱动，拒绝主观猜测，做实验，找瓶颈，抓大放小。完善配套程序：1. debug工具（推荐结果是怎么出来的）2. 实时解析日志得到CTR，流量，点击等数据并可视化（监控）3. 实时用户行为收集并存储（数据收集）4. Router（AB测试系统）</li>
                     </ol>
                   </div>
