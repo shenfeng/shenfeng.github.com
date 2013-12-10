@@ -9,7 +9,7 @@ categories: ['golang']
 ---
 
 这段时间对google出的go语言比较感兴趣。比较看中的原因：
-1. Robert Griesemer, [Rob Pike](http://en.wikipedia.org/wiki/Rob_Pike), [Ken Thompson](http://en.wikipedia.org/wiki/Ken_Thompson)。 `Ken Thompson`：大名鼎鼎的K & R中的K； C，Unix，UTF8，正则表达式等等有他诸多贡献。 `Rob Pike`：Unix，UTF8，Plan 9等，并且几十年的并发开发。`Robert Griesemer`： hotspot jvm。 他们都是计算机行业的牛人， 牛人出品，值得一试。
+1. Robert Griesemer, [Rob Pike](http://en.wikipedia.org/wiki/Rob_Pike), [Ken Thompson](http://en.wikipedia.org/wiki/Ken_Thompson)。 Unix，UTF8，正则表达式等等有他诸多贡献。 `Rob Pike`：Unix，UTF8，Plan 9等，并且几十年的并发开发。`Robert Griesemer`： hotspot jvm。 他们都是计算机行业的牛人， 牛人出品，值得一试。
 2. go简单明了
 3. 通过`go` `goroutine` `select` `channel`来对解决并发问题。
 
