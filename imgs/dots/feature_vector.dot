@@ -1,0 +1,75 @@
+digraph feature_vector {
+    node[shape=record, style=filled];
+
+//    edge [style=bold];
+//    rankdir=BT;
+
+    rankdir = LR;
+
+    dict [label="hash索引\n", fillcolor = "#FADCAD", shape=ellipse]
+
+    bucket [label="<1910> -1910 | 1100(用户数) | <12> 12 | <other1> ...(其它用户) | <1010> 1010 | 121 (用户数) | <24> 24 | <other2> ...(其它用户)", fillcolor = "#F2F2F2"];
+
+//    userid [label="用户ID"]
+//    feature_cnt [label="行为数量"]
+
+    dict -> bucket [label="行为->用户", style=bold]
+
+//    sorted[label="有序", shape=ellipse, fillcolor="#D0EEF4"]
+//    sorted -> bucket:1210
+//    sorted -> bucket:19
+//    sorted -> bucket:1910
+
+
+//    dict -> bucket:user2
+  //  dict -> bucket:user3
+
+//    bucket:user1 -> userid
+  //  bucket:user2 -> userid
+    //bucket:user3 -> userid
+
+//    node[shape=none, style=filled, fillcolor="#408090"];
+    node[shape=none, style=filled, fillcolor="#acefce"];
+
+//    1210[label="浏览1210项目"]
+//    bucket:1210 -> 1210 // [label="ID 到 行为 映射表"]
+
+    1910[label="搜索‘火锅’"]
+    bucket:1910 -> 1910
+
+//    19[label="筛选 “五道口”"]
+//    bucket:19 -> 19
+
+//    11212[label="在 “望京” 消费 “COSTA COFFEE”"]
+//    bucket:11212 -> 11212
+
+    1010[label="搜索“coffee”"]
+    bucket:1010 -> 1010
+
+    userid [label="用户ID"]
+
+    bucket:12 -> userid
+    bucket:24 -> userid
+    bucket:other1 -> userid
+    bucket:other2 -> userid
+
+    node[shape=ellipse, style=filled];
+
+//    mapping[shape=none, label="行为 <-> ID的映射表"]
+  //  mapping -> 1210
+//    mapping -> 1910
+  //  mapping -> 19
+//    mapping -> 11212
+  //  mapping -> 1010
+
+
+//    matrix[label="预生成的用户行为矩阵文件，mmap内存", fillcolor="#95BBE3"]
+  //  bucket -> matrix
+
+//    explain[label="预生成文件，mmap内存，数据", fillcolor="#95BBE3"]
+//    bucket -> explain
+
+
+//    bucket:fc1 -> feature_cnt
+  //  bucket:fc2 -> feature_cnt
+}
