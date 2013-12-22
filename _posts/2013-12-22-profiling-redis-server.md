@@ -68,4 +68,3 @@ google-pprof ./src/redis-server 'http://localhost:9999/pprof/profile'
 
 ![epoll_ctl](/imgs/listdb_epoll_wait.jpg)
 
-这种方式容易理解，效率高，维护性好，过度时间，写一篇blog，介绍http-kit用的IO和线程模型时，详细讨论
