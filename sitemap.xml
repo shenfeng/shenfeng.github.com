@@ -9,7 +9,7 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  {% for post in site.posts limit:20 %}
+  {% for post in site.posts limit:200 %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
