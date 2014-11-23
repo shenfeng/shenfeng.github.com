@@ -1,6 +1,6 @@
 #auto: true
 permalink: /:title.html
 url: http://shenfeng.me
-pygments: tue
+highlighter: pygments
 exclude: [scss, bin, Rakefile]
 paginate: 5
