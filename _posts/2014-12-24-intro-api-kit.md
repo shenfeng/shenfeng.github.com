@@ -95,7 +95,7 @@ public interface IHandler {
 
 ### 生成的iOS的code
 
-iOS显然是需要支持的。先花了一天时间，学习swift，并完成swift的code生成的生成。 在和公司的iOS工程师沟通时，他们在用objective-c，
+iOS显然是需要支持的。先花了一天时间，学习swift，并完成swift的code生成。在和公司的iOS工程师沟通时，他们在用objective-c，
 于是又多花了一天时间看oc，并生成oc的code，语法有点不太习惯，但还是搞定了。
 
 ![2](imgs/apikit/ios.png)
@@ -166,11 +166,13 @@ batch Batch(GetNewest, SearchBook)
 4. Api的定义文件，是个很好的文档。api-kit把文档，翻译成了可以执行的代码。代码也是文档。这会节约团队之间的交流成本，
 节约出来的时间，可以干更有意思的事情，比如晒晒太阳，喝喝咖啡，和奶奶聊聊天，听她讲故事。
 5. Rest API的url endpoint是什么，对于客户端来说，变成了实现细节。客户端变成仅关心 函数名，参数，返回值，而这些，IDE会给我们很好的帮助。
+6. 整个流程简化为：定义api规范，服务器端实interface。客户端的代码已经生成好。大家思考的方式，变成函数，返回值，参数。交流也就变为该调用哪个函数，某个参数是什么意思，由于参数名，函数名的帮助，在common sense的帮助下，这部分沟通也会省掉一些。
 
 ### 接下来的工作
 
 1. 可能我会想办法做到透明的cache（生成cache的code），
 2. 支持其它语言，比如生成ajax调用的js code，用于支持网站开发，Python的客户端（开发时的黑盒子测试）
+3. 生成go的服务器端代码
 
 
 **我们正在招聘，需要Android和iOS工程师的加入，和我一组，开发[看准网](http://www.kanzhun.com) 的App，为四亿职场人服务。
