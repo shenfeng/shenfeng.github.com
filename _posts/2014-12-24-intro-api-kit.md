@@ -148,9 +148,14 @@ batch Batch(GetNewest, SearchBook)
 
 {% endhighlight %}
 
-生成的code，会在服务器端透明的处理掉Batch请求，并且会为客户端生成名为Batch的函数：
+生成的code
+
+1. 在服务器端透明的处理掉Batch请求
+2. 在客户端生成名为Batch的函数，接受GetNewest的req，SearchBook的req，返回BatchResp
 
 ![2](imgs/apikit/batch.png)
+
+![2](imgs/apikit/batch_ios.png)
 
 
 ### 现在的状态
